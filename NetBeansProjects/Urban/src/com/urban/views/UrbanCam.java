@@ -6,8 +6,10 @@ package com.urban.views;
 import com.urban.controller.ValidationUtil;
 import com.urban.model.Camera;
 import java.awt.Color;
+import java.util.LinkedList;
 import java.util.List;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
@@ -26,6 +28,7 @@ public class UrbanCam extends javax.swing.JFrame {
     public UrbanCam() {
         initComponents();
         initializeLayout(); // Set up CardLayout and add screens
+        initializeData();
         startProgress(); // Show loading screen and initiate progress    
     }
 
@@ -43,6 +46,9 @@ public class UrbanCam extends javax.swing.JFrame {
         cardLayout.show(getContentPane(), "loadingScreen");
     }
 
+    private void initializeData() {
+        camList = new LinkedList();
+    }
     
     private void startProgress() {
         javax.swing.SwingWorker<Void, Integer> worker = new javax.swing.SwingWorker<>() {
@@ -73,6 +79,16 @@ public class UrbanCam extends javax.swing.JFrame {
         cardLayout.show(getContentPane(), screenName);
     }
     
+    private void registerCamera(Camera Cam) {
+        camList.add(Cam);
+        DefaultTableModel model = (DefaultTableModel) camTable.getModel();
+        model.addRow(new Object[]{
+            Cam.getId(), 
+            Cam.getName(), 
+            Cam.getPrice(),
+            Cam.getStock()
+        });
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -213,6 +229,14 @@ public class UrbanCam extends javax.swing.JFrame {
             }
         });
 
+        idError.setForeground(new java.awt.Color(255, 0, 51));
+
+        nameError.setForeground(new java.awt.Color(204, 0, 0));
+
+        priceError.setForeground(new java.awt.Color(204, 0, 0));
+
+        stockError.setForeground(new java.awt.Color(204, 0, 0));
+
         addBtn.setBackground(new java.awt.Color(204, 204, 204));
         addBtn.setText("Add");
         addBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -223,9 +247,19 @@ public class UrbanCam extends javax.swing.JFrame {
 
         updateBtn.setBackground(new java.awt.Color(204, 204, 204));
         updateBtn.setText("Update");
+        updateBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateBtnActionPerformed(evt);
+            }
+        });
 
         deleteBtn.setBackground(new java.awt.Color(204, 204, 204));
         deleteBtn.setText("Delete");
+        deleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout adminPnlLayout = new javax.swing.GroupLayout(adminPnl);
         adminPnl.setLayout(adminPnlLayout);
@@ -600,37 +634,125 @@ public class UrbanCam extends javax.swing.JFrame {
         String price = priceField.getText().trim();
         String stock = stockField.getText().trim();
         
-        if (!ValidationUtil.isIdValid(idText)) {
-            System.out.println("Please Enter a Valid College ID");
-            errorOrNormalField(idField, "CollegeId", idError, "Enter Valid ID", Color.red, rootPaneCheckingEnabled);
-            return;
+        try{
+            if (!ValidationUtil.isIdValid(idText)) {
+                System.out.println("Please Enter a Valid College ID");
+                errorOrNormalField(idField, "CollegeId", idError, "Enter Valid ID", Color.red, rootPaneCheckingEnabled);
+                return;
+            }
+
+            if (!ValidationUtil.isNameValid(name)) {
+                System.out.println("Please Enter a Valid Name");
+                errorOrNormalField(nameField, "Name", nameError, "Enter Valid Name", Color.red, rootPaneCheckingEnabled);
+                return;
+            }
+
+            if (!ValidationUtil.isPriceValid(price)) {
+                System.out.println("Please Enter a Valid Name");
+                errorOrNormalField(priceField, "Name", priceError, "Enter Valid Price", Color.red, rootPaneCheckingEnabled);
+                return;
+            }
+
+            Camera cam = new Camera(Integer.parseInt(idText), name, Integer.parseInt(price), Integer.parseInt(stock));
+            System.out.println("Camera Added: " + cam.getName() + "\n" +
+                               "Id: " + cam.getId()+ "\n" +
+                               "Price: " + cam.getPrice() + "\n" +
+                               "In Stock: " + cam.getStock());
+
+            camList.add(cam);
+
+            loadListToTable();
+
+            clearCameraForm();
+        }catch(NumberFormatException e){
+            System.out.println("Invalid number format: " + e.getMessage());
         }
-        
-        if (!ValidationUtil.isNameValid(name)) {
-            System.out.println("Please Enter a Valid Name");
-            errorOrNormalField(nameField, "Name", nameError, "Enter Valid Name", Color.red, rootPaneCheckingEnabled);
-            return;
-        }
-        
-        if (!ValidationUtil.isPriceValid(price)) {
-            System.out.println("Please Enter a Valid Name");
-            errorOrNormalField(priceField, "Name", priceError, "Enter Valid Price", Color.red, rootPaneCheckingEnabled);
-            return;
-        }
-        
-        Camera cam = new Camera(Integer.parseInt(idText), name, Integer.parseInt(price), Integer.parseInt(stock));
-        System.out.println("Camera Added: " + cam.getName() + "\n" +
-                           "Id: " + cam.getId()+ "\n" +
-                           "Price: " + cam.getPrice() + "\n" +
-                           "In Stock: " + cam.getStock());
-        
-        camList.add(cam);
-        
-        loadListToTable();
-                
-        clearCameraForm();
         
     }//GEN-LAST:event_addBtnActionPerformed
+
+    private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
+        // TODO add your handling code here:
+        String idText = idField.getText().trim();
+        String name = nameField.getText().trim();
+        String price = priceField.getText().trim();
+        String stock = stockField.getText().trim();
+        
+        try{
+            if (!ValidationUtil.isIdValid(idText)) {
+                errorOrNormalField(idField, "CollegeId", idError, "Enter Valid ID", Color.red, rootPaneCheckingEnabled);
+                return;
+            }
+
+            if (!ValidationUtil.isNameValid(name)) {
+                errorOrNormalField(nameField, "Name", nameError, "Enter Valid Name", Color.red, rootPaneCheckingEnabled);
+                return;
+            }
+
+            if (!ValidationUtil.isPriceValid(price)) {
+                errorOrNormalField(priceField, "Name", priceError, "Enter Valid Price", Color.red, rootPaneCheckingEnabled);
+                return;
+            }
+            
+            Camera exists = null;
+            for (Camera urb : camList) {
+                if (urb.getId() == Integer.parseInt(idText)) {
+                    exists = urb;
+                    break;
+                }
+            }
+
+            if(exists == null){
+               JOptionPane.showMessageDialog(null, "No Item In List", "Error", JOptionPane.ERROR_MESSAGE);  
+                return;
+            }
+
+            exists.setId(Integer.parseInt(idText));
+            exists.setName(name);
+            exists.setPrice(Integer.parseInt(price));
+            exists.setStock(Integer.parseInt(stock));
+
+            loadListToTable();
+
+               JOptionPane.showMessageDialog(null, "Updated", "Update Complete", JOptionPane.INFORMATION_MESSAGE);  
+
+            clearCameraForm();
+        }catch(NumberFormatException e){
+            System.out.println("Invalid format: " + e.getMessage());
+        }
+        
+    }//GEN-LAST:event_updateBtnActionPerformed
+
+    private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
+        // TODO add your handling code here:
+        String idText = idField.getText().trim();
+
+        if (idText.isEmpty()) {
+               JOptionPane.showMessageDialog(null, "Please Enter An ID", "No ID", JOptionPane.ERROR_MESSAGE);  
+            return;
+        }
+
+        Camera exists = null;
+
+        for (Camera urb : camList) {
+            if (urb.getId() == Integer.parseInt(idText)) {
+                exists = urb;
+                break; 
+            }
+        }
+
+        
+        if (exists == null) {
+               JOptionPane.showMessageDialog(null, "Please Enter A Valid ID", "Invalid ID", JOptionPane.ERROR_MESSAGE);  
+            return;
+        }
+
+        camList.remove(exists);
+        JOptionPane.showMessageDialog(null, "Item Removed", "Deletion Complete", JOptionPane.INFORMATION_MESSAGE);  
+
+        loadListToTable();
+        
+        clearCameraForm();
+    }//GEN-LAST:event_deleteBtnActionPerformed
 
     /**
      * @param args the command line arguments
