@@ -640,6 +640,7 @@ public class UrbanCam extends javax.swing.JFrame {
                 errorOrNormalField(idField, "CollegeId", idError, "Enter Valid ID", Color.red, rootPaneCheckingEnabled);
                 return;
             }
+            
 
             if (!ValidationUtil.isNameValid(name)) {
                 System.out.println("Please Enter a Valid Name");
@@ -649,7 +650,7 @@ public class UrbanCam extends javax.swing.JFrame {
 
             if (!ValidationUtil.isPriceValid(price)) {
                 System.out.println("Please Enter a Valid Name");
-                errorOrNormalField(priceField, "Name", priceError, "Enter Valid Price", Color.red, rootPaneCheckingEnabled);
+                errorOrNormalField(priceField, "Price", priceError, "Enter Valid Price", Color.red, rootPaneCheckingEnabled);
                 return;
             }
 
@@ -662,6 +663,12 @@ public class UrbanCam extends javax.swing.JFrame {
             camList.add(cam);
 
             loadListToTable();
+            
+            errorOrNormalField(idField, "CollegeId", idError, "", Color.black, rootPaneCheckingEnabled);
+            errorOrNormalField(nameField, "Name", nameError, "", Color.black, rootPaneCheckingEnabled);
+            errorOrNormalField(priceField, "Price", priceError, "", Color.black, rootPaneCheckingEnabled);
+            
+
 
             clearCameraForm();
         }catch(NumberFormatException e){
@@ -713,7 +720,11 @@ public class UrbanCam extends javax.swing.JFrame {
 
             loadListToTable();
 
-               JOptionPane.showMessageDialog(null, "Updated", "Update Complete", JOptionPane.INFORMATION_MESSAGE);  
+            JOptionPane.showMessageDialog(null, "Updated", "Update Complete", JOptionPane.INFORMATION_MESSAGE);  
+            
+            errorOrNormalField(idField, "CollegeId", idError, "", Color.black, rootPaneCheckingEnabled);
+            errorOrNormalField(nameField, "Name", nameError, "", Color.black, rootPaneCheckingEnabled);
+            errorOrNormalField(priceField, "Price", priceError, "", Color.black, rootPaneCheckingEnabled);
 
             clearCameraForm();
         }catch(NumberFormatException e){
