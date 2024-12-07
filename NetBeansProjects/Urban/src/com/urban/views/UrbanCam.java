@@ -79,17 +79,25 @@ public class UrbanCam extends javax.swing.JFrame {
         mainScreen = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
+        homePnl = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
+        aboutPnl = new javax.swing.JPanel();
+        adminPnl = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         idField = new javax.swing.JTextField();
         nameField = new javax.swing.JTextField();
         priceField = new javax.swing.JTextField();
         stockField = new javax.swing.JTextField();
+        idError = new javax.swing.JLabel();
+        nameError = new javax.swing.JLabel();
+        priceError = new javax.swing.JLabel();
+        stockError = new javax.swing.JLabel();
+        addBtn = new javax.swing.JButton();
+        updateBtn = new javax.swing.JButton();
+        deleteBtn = new javax.swing.JButton();
         loginScreen = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         welcomeLbl = new javax.swing.JLabel();
         usernameLbl = new javax.swing.JLabel();
         passLbl = new javax.swing.JLabel();
@@ -97,10 +105,13 @@ public class UrbanCam extends javax.swing.JFrame {
         passField = new javax.swing.JPasswordField();
         loginBtn = new javax.swing.JButton();
         loginError = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         loadingScreen = new javax.swing.JPanel();
         loadBar = new javax.swing.JProgressBar();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
         jPanel3.setMaximumSize(new java.awt.Dimension(1920, 1080));
@@ -111,48 +122,48 @@ public class UrbanCam extends javax.swing.JFrame {
         jTabbedPane1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTabbedPane1.setForeground(new java.awt.Color(242, 242, 242));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        homePnl.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("SignPainter", 0, 56)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(242, 242, 242));
         jLabel3.setText("Urban");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout homePnlLayout = new javax.swing.GroupLayout(homePnl);
+        homePnl.setLayout(homePnlLayout);
+        homePnlLayout.setHorizontalGroup(
+            homePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(homePnlLayout.createSequentialGroup()
                 .addGap(658, 658, 658)
                 .addComponent(jLabel3)
                 .addContainerGap(1150, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        homePnlLayout.setVerticalGroup(
+            homePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(homePnlLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jLabel3)
                 .addContainerGap(962, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Home", jPanel1);
+        jTabbedPane1.addTab("Home", homePnl);
 
-        jPanel5.setBackground(new java.awt.Color(0, 0, 0));
+        aboutPnl.setBackground(new java.awt.Color(0, 0, 0));
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout aboutPnlLayout = new javax.swing.GroupLayout(aboutPnl);
+        aboutPnl.setLayout(aboutPnlLayout);
+        aboutPnlLayout.setHorizontalGroup(
+            aboutPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1916, Short.MAX_VALUE)
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        aboutPnlLayout.setVerticalGroup(
+            aboutPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1041, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("About Us", jPanel5);
+        jTabbedPane1.addTab("About Us", aboutPnl);
 
-        jPanel4.setBackground(new java.awt.Color(0, 0, 0));
+        adminPnl.setBackground(new java.awt.Color(0, 0, 0));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -195,41 +206,86 @@ public class UrbanCam extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+        addBtn.setBackground(new java.awt.Color(204, 204, 204));
+        addBtn.setText("Add");
+
+        updateBtn.setBackground(new java.awt.Color(204, 204, 204));
+        updateBtn.setText("Update");
+
+        deleteBtn.setBackground(new java.awt.Color(204, 204, 204));
+        deleteBtn.setText("Delete");
+
+        javax.swing.GroupLayout adminPnlLayout = new javax.swing.GroupLayout(adminPnl);
+        adminPnl.setLayout(adminPnlLayout);
+        adminPnlLayout.setHorizontalGroup(
+            adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminPnlLayout.createSequentialGroup()
+                .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(adminPnlLayout.createSequentialGroup()
                         .addGap(173, 173, 173)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1089, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(356, 356, 356)
-                        .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(adminPnlLayout.createSequentialGroup()
+                        .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(adminPnlLayout.createSequentialGroup()
+                                .addGap(356, 356, 356)
+                                .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(adminPnlLayout.createSequentialGroup()
+                                .addGap(362, 362, 362)
+                                .addComponent(idError, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(98, 98, 98)
-                        .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(adminPnlLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(nameError, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(99, 99, 99)
-                        .addComponent(priceField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(priceField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(adminPnlLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(priceError, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(82, 82, 82)
-                        .addComponent(stockField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(adminPnlLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(stockError, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(stockField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(adminPnlLayout.createSequentialGroup()
+                        .addGap(479, 479, 479)
+                        .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(126, 126, 126)
+                        .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(116, 116, 116)
+                        .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(654, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(78, 78, 78)
+        adminPnlLayout.setVerticalGroup(
+            adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminPnlLayout.createSequentialGroup()
+                .addGap(61, 61, 61)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(priceField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(stockField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(586, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(nameError, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(priceError, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(idError, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(stockError, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(100, 100, 100)
+                .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(447, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Admin Control", jPanel4);
+        jTabbedPane1.addTab("Admin Control", adminPnl);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -266,10 +322,12 @@ public class UrbanCam extends javax.swing.JFrame {
         loginScreen.setBackground(new java.awt.Color(0, 0, 0));
         loginScreen.setForeground(new java.awt.Color(242, 242, 242));
 
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+
         welcomeLbl.setBackground(new java.awt.Color(0, 0, 0));
         welcomeLbl.setFont(new java.awt.Font("Helvetica Neue", 0, 48)); // NOI18N
         welcomeLbl.setForeground(new java.awt.Color(242, 242, 242));
-        welcomeLbl.setText("Welcome");
+        welcomeLbl.setText("Log In");
 
         usernameLbl.setBackground(new java.awt.Color(0, 0, 0));
         usernameLbl.setForeground(new java.awt.Color(242, 242, 242));
@@ -295,50 +353,89 @@ public class UrbanCam extends javax.swing.JFrame {
         loginError.setBackground(new java.awt.Color(0, 0, 0));
         loginError.setForeground(new java.awt.Color(242, 242, 242));
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(loginError, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(190, 190, 190)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(usernameLbl)
+                                .addGap(18, 18, 18)
+                                .addComponent(userField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(passLbl)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(loginBtn)
+                                    .addComponent(passField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(38, 38, 38)
+                                .addComponent(welcomeLbl)))))
+                .addContainerGap(201, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(107, 107, 107)
+                .addComponent(welcomeLbl)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(usernameLbl)
+                    .addComponent(userField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(passLbl)
+                    .addComponent(passField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addComponent(loginBtn)
+                .addGap(585, 585, 585)
+                .addComponent(loginError, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/urban/views/loginPic2.png"))); // NOI18N
+
+        jLabel7.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel7.setFont(new java.awt.Font("Helvetica Neue", 0, 48)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel7.setText("Welcome To Urbam");
+
         javax.swing.GroupLayout loginScreenLayout = new javax.swing.GroupLayout(loginScreen);
         loginScreen.setLayout(loginScreenLayout);
         loginScreenLayout.setHorizontalGroup(
             loginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(loginScreenLayout.createSequentialGroup()
+                .addGap(125, 125, 125)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(loginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(loginScreenLayout.createSequentialGroup()
-                        .addGap(609, 609, 609)
-                        .addComponent(welcomeLbl))
+                        .addGap(190, 190, 190)
+                        .addComponent(jLabel4))
                     .addGroup(loginScreenLayout.createSequentialGroup()
-                        .addGap(576, 576, 576)
-                        .addGroup(loginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(usernameLbl)
-                            .addComponent(passLbl))
-                        .addGap(48, 48, 48)
-                        .addGroup(loginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(userField)
-                            .addComponent(passField, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)))
-                    .addGroup(loginScreenLayout.createSequentialGroup()
-                        .addGap(661, 661, 661)
-                        .addComponent(loginBtn))
-                    .addGroup(loginScreenLayout.createSequentialGroup()
-                        .addGap(529, 529, 529)
-                        .addComponent(loginError, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1295, Short.MAX_VALUE))
+                        .addGap(127, 127, 127)
+                        .addComponent(jLabel7)))
+                .addContainerGap(1374, Short.MAX_VALUE))
         );
         loginScreenLayout.setVerticalGroup(
             loginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(loginScreenLayout.createSequentialGroup()
-                .addGap(125, 125, 125)
-                .addComponent(welcomeLbl)
-                .addGap(35, 35, 35)
-                .addGroup(loginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(usernameLbl)
-                    .addComponent(userField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(loginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(passLbl)
-                    .addComponent(passField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(loginError, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(loginBtn)
-                .addContainerGap(849, Short.MAX_VALUE))
+                .addGroup(loginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(loginScreenLayout.createSequentialGroup()
+                        .addGap(191, 191, 191)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(loginScreenLayout.createSequentialGroup()
+                        .addGap(267, 267, 267)
+                        .addComponent(jLabel7)
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabel4)))
+                .addContainerGap(564, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -359,28 +456,39 @@ public class UrbanCam extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(242, 242, 242));
         jLabel2.setText("Urban");
 
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/urban/views/camPic.png"))); // NOI18N
+
         javax.swing.GroupLayout loadingScreenLayout = new javax.swing.GroupLayout(loadingScreen);
         loadingScreen.setLayout(loadingScreenLayout);
         loadingScreenLayout.setHorizontalGroup(
             loadingScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(loadingScreenLayout.createSequentialGroup()
-                .addGap(450, 450, 450)
                 .addGroup(loadingScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(loadBar, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(920, Short.MAX_VALUE))
+                    .addGroup(loadingScreenLayout.createSequentialGroup()
+                        .addGap(575, 575, 575)
+                        .addComponent(jLabel6))
+                    .addGroup(loadingScreenLayout.createSequentialGroup()
+                        .addGap(657, 657, 657)
+                        .addComponent(jLabel2))
+                    .addGroup(loadingScreenLayout.createSequentialGroup()
+                        .addGap(451, 451, 451)
+                        .addGroup(loadingScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(loadBar, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(919, Short.MAX_VALUE))
         );
         loadingScreenLayout.setVerticalGroup(
             loadingScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(loadingScreenLayout.createSequentialGroup()
-                .addGap(425, 425, 425)
+                .addGap(174, 174, 174)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(loadBar, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addContainerGap(550, Short.MAX_VALUE))
+                .addContainerGap(646, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -388,13 +496,13 @@ public class UrbanCam extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(loadingScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 2047, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(loadingScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 2053, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 6, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(loadingScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 1096, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(loadingScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 1102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 6, Short.MAX_VALUE))
         );
 
@@ -476,14 +584,21 @@ public class UrbanCam extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel aboutPnl;
+    private javax.swing.JButton addBtn;
+    private javax.swing.JPanel adminPnl;
+    private javax.swing.JButton deleteBtn;
+    private javax.swing.JPanel homePnl;
+    private javax.swing.JLabel idError;
     private javax.swing.JTextField idField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
@@ -493,11 +608,15 @@ public class UrbanCam extends javax.swing.JFrame {
     private javax.swing.JLabel loginError;
     private javax.swing.JPanel loginScreen;
     private javax.swing.JPanel mainScreen;
+    private javax.swing.JLabel nameError;
     private javax.swing.JTextField nameField;
     private javax.swing.JPasswordField passField;
     private javax.swing.JLabel passLbl;
+    private javax.swing.JLabel priceError;
     private javax.swing.JTextField priceField;
+    private javax.swing.JLabel stockError;
     private javax.swing.JTextField stockField;
+    private javax.swing.JButton updateBtn;
     private javax.swing.JTextField userField;
     private javax.swing.JLabel usernameLbl;
     private javax.swing.JLabel welcomeLbl;
