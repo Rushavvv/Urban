@@ -3,13 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.urban.views;
+import com.urban.controller.ValidationUtil;
+import com.urban.model.Camera;
+import java.awt.Color;
+import java.util.List;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author rushav
  */
 public class UrbanCam extends javax.swing.JFrame {
-    
+    private List<Camera> camList;
     private java.awt.CardLayout cardLayout;
 
 
@@ -84,7 +91,7 @@ public class UrbanCam extends javax.swing.JFrame {
         aboutPnl = new javax.swing.JPanel();
         adminPnl = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        camTable = new javax.swing.JTable();
         idField = new javax.swing.JTextField();
         nameField = new javax.swing.JTextField();
         priceField = new javax.swing.JTextField();
@@ -165,7 +172,7 @@ public class UrbanCam extends javax.swing.JFrame {
 
         adminPnl.setBackground(new java.awt.Color(0, 0, 0));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        camTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -176,7 +183,7 @@ public class UrbanCam extends javax.swing.JFrame {
                 "ID", "Name", "Price", "Stock"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(camTable);
 
         idField.setBorder(javax.swing.BorderFactory.createTitledBorder("ID"));
         idField.addActionListener(new java.awt.event.ActionListener() {
@@ -208,6 +215,11 @@ public class UrbanCam extends javax.swing.JFrame {
 
         addBtn.setBackground(new java.awt.Color(204, 204, 204));
         addBtn.setText("Add");
+        addBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBtnActionPerformed(evt);
+            }
+        });
 
         updateBtn.setBackground(new java.awt.Color(204, 204, 204));
         updateBtn.setText("Update");
@@ -291,11 +303,11 @@ public class UrbanCam extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 2173, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1193, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout mainScreenLayout = new javax.swing.GroupLayout(mainScreen);
@@ -405,7 +417,7 @@ public class UrbanCam extends javax.swing.JFrame {
         jLabel7.setBackground(new java.awt.Color(0, 0, 0));
         jLabel7.setFont(new java.awt.Font("Helvetica Neue", 0, 48)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel7.setText("Welcome To Urbam");
+        jLabel7.setText("Welcome To Urban");
 
         javax.swing.GroupLayout loginScreenLayout = new javax.swing.GroupLayout(loginScreen);
         loginScreen.setLayout(loginScreenLayout);
@@ -416,12 +428,12 @@ public class UrbanCam extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(loginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(loginScreenLayout.createSequentialGroup()
-                        .addGap(190, 190, 190)
-                        .addComponent(jLabel4))
+                        .addGap(131, 131, 131)
+                        .addComponent(jLabel7))
                     .addGroup(loginScreenLayout.createSequentialGroup()
-                        .addGap(127, 127, 127)
-                        .addComponent(jLabel7)))
-                .addContainerGap(1374, Short.MAX_VALUE))
+                        .addGap(199, 199, 199)
+                        .addComponent(jLabel4)))
+                .addContainerGap(1384, Short.MAX_VALUE))
         );
         loginScreenLayout.setVerticalGroup(
             loginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -431,10 +443,10 @@ public class UrbanCam extends javax.swing.JFrame {
                         .addGap(191, 191, 191)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(loginScreenLayout.createSequentialGroup()
-                        .addGap(267, 267, 267)
-                        .addComponent(jLabel7)
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel4)))
+                        .addGap(186, 186, 186)
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel7)))
                 .addContainerGap(564, Short.MAX_VALUE))
         );
 
@@ -475,7 +487,7 @@ public class UrbanCam extends javax.swing.JFrame {
                         .addGroup(loadingScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(loadBar, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(919, Short.MAX_VALUE))
+                .addContainerGap(1052, Short.MAX_VALUE))
         );
         loadingScreenLayout.setVerticalGroup(
             loadingScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -488,7 +500,7 @@ public class UrbanCam extends javax.swing.JFrame {
                 .addComponent(loadBar, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addContainerGap(646, Short.MAX_VALUE))
+                .addContainerGap(668, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -548,6 +560,78 @@ public class UrbanCam extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_stockFieldActionPerformed
 
+    
+    private void loadListToTable(){
+            DefaultTableModel model = (DefaultTableModel) camTable.getModel();
+
+            model.setRowCount(0);
+            
+            camList.forEach(student -> model.addRow(new Object[]{
+                student.getId(),
+                student.getName(),
+                student.getPrice(),
+                student.getStock()
+            }));
+    }
+    
+    private void clearCameraForm(){
+        idField.setText("");
+        nameField.setText("");
+        priceField.setText("");
+        stockField.setText("");
+    }
+    
+    private void errorOrNormalField(JTextField textField, String fieldName, JLabel errorLbl, String errorMsg, Color color, boolean isError){
+        textField.setBorder(
+                javax.swing.BorderFactory.createTitledBorder(
+                    javax.swing.BorderFactory.createLineBorder(color, 2), fieldName, javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, 
+                    javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12),color));
+        
+        if(isError) {
+            errorLbl.setText(errorMsg);
+            errorLbl.setVisible(true);
+        }
+        
+    }
+    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
+        // TODO add your handling code here:
+        String idText = idField.getText().trim();
+        String name = nameField.getText().trim();
+        String price = priceField.getText().trim();
+        String stock = stockField.getText().trim();
+        
+        if (!ValidationUtil.isIdValid(idText)) {
+            System.out.println("Please Enter a Valid College ID");
+            errorOrNormalField(idField, "CollegeId", idError, "Enter Valid ID", Color.red, rootPaneCheckingEnabled);
+            return;
+        }
+        
+        if (!ValidationUtil.isNameValid(name)) {
+            System.out.println("Please Enter a Valid Name");
+            errorOrNormalField(nameField, "Name", nameError, "Enter Valid Name", Color.red, rootPaneCheckingEnabled);
+            return;
+        }
+        
+        if (!ValidationUtil.isPriceValid(price)) {
+            System.out.println("Please Enter a Valid Name");
+            errorOrNormalField(priceField, "Name", priceError, "Enter Valid Price", Color.red, rootPaneCheckingEnabled);
+            return;
+        }
+        
+        Camera cam = new Camera(Integer.parseInt(idText), name, Integer.parseInt(price), Integer.parseInt(stock));
+        System.out.println("Camera Added: " + cam.getName() + "\n" +
+                           "Id: " + cam.getId()+ "\n" +
+                           "Price: " + cam.getPrice() + "\n" +
+                           "In Stock: " + cam.getStock());
+        
+        camList.add(cam);
+        
+        loadListToTable();
+                
+        clearCameraForm();
+        
+    }//GEN-LAST:event_addBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -587,6 +671,7 @@ public class UrbanCam extends javax.swing.JFrame {
     private javax.swing.JPanel aboutPnl;
     private javax.swing.JButton addBtn;
     private javax.swing.JPanel adminPnl;
+    private javax.swing.JTable camTable;
     private javax.swing.JButton deleteBtn;
     private javax.swing.JPanel homePnl;
     private javax.swing.JLabel idError;
@@ -601,7 +686,6 @@ public class UrbanCam extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JProgressBar loadBar;
     private javax.swing.JPanel loadingScreen;
     private javax.swing.JButton loginBtn;
