@@ -590,11 +590,11 @@ public class UrbanCam extends javax.swing.JFrame {
 
             model.setRowCount(0);
             
-            camList.forEach(student -> model.addRow(new Object[]{
-                student.getId(),
-                student.getName(),
-                student.getPrice(),
-                student.getStock()
+            camList.forEach(camera -> model.addRow(new Object[]{
+                camera.getId(),
+                camera.getName(),
+                camera.getPrice(),
+                camera.getStock()
             }));
     }
     
@@ -654,7 +654,7 @@ public class UrbanCam extends javax.swing.JFrame {
 
             loadListToTable();
             
-            errorOrNormalField(idField, "CollegeId", idError, "", Color.black, rootPaneCheckingEnabled);
+            errorOrNormalField(idField, "Id", idError, "", Color.black, rootPaneCheckingEnabled);
             errorOrNormalField(nameField, "Name", nameError, "", Color.black, rootPaneCheckingEnabled);
             errorOrNormalField(priceField, "Price", priceError, "", Color.black, rootPaneCheckingEnabled);
             
@@ -712,7 +712,7 @@ public class UrbanCam extends javax.swing.JFrame {
 
             JOptionPane.showMessageDialog(null, "Updated", "Update Complete", JOptionPane.INFORMATION_MESSAGE);  
             
-            errorOrNormalField(idField, "CollegeId", idError, "", Color.black, rootPaneCheckingEnabled);
+            errorOrNormalField(idField, "CId", idError, "", Color.black, rootPaneCheckingEnabled);
             errorOrNormalField(nameField, "Name", nameError, "", Color.black, rootPaneCheckingEnabled);
             errorOrNormalField(priceField, "Price", priceError, "", Color.black, rootPaneCheckingEnabled);
 
