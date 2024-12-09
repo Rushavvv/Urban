@@ -102,16 +102,6 @@ public class UrbanCam extends javax.swing.JFrame {
         mainScreen = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        homePnl = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        aboutPnl = new javax.swing.JPanel();
         adminPnl = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         camTable = new javax.swing.JTable();
@@ -126,8 +116,21 @@ public class UrbanCam extends javax.swing.JFrame {
         addBtn = new javax.swing.JButton();
         updateBtn = new javax.swing.JButton();
         deleteBtn = new javax.swing.JButton();
+        homePnl = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        aboutPnl = new javax.swing.JPanel();
         loginScreen = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
         usernameLbl = new javax.swing.JLabel();
         passLbl = new javax.swing.JLabel();
         userField = new javax.swing.JTextField();
@@ -135,8 +138,8 @@ public class UrbanCam extends javax.swing.JFrame {
         loginBtn = new javax.swing.JButton();
         loginError = new javax.swing.JLabel();
         welcomeLbl = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         loadingScreen = new javax.swing.JPanel();
         loadBar = new javax.swing.JProgressBar();
         jLabel1 = new javax.swing.JLabel();
@@ -150,77 +153,6 @@ public class UrbanCam extends javax.swing.JFrame {
 
         jTabbedPane1.setBackground(new java.awt.Color(0, 0, 0));
         jTabbedPane1.setForeground(new java.awt.Color(242, 242, 242));
-
-        homePnl.setBackground(new java.awt.Color(0, 0, 0));
-
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setFont(new java.awt.Font("SignPainter", 0, 82)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel3.setText("Urban");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 48)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel5.setText("Say Cheese");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
-
-        jLabel8.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel8.setText("For the");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
-
-        jLabel9.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("best");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, -1));
-
-        jLabel10.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel10.setText("quality goods,");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, -1, -1));
-
-        jLabel11.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel11.setText("at the best price.");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, -1));
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/urban/resources/camBg.jpg"))); // NOI18N
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1650, 400));
-
-        javax.swing.GroupLayout homePnlLayout = new javax.swing.GroupLayout(homePnl);
-        homePnl.setLayout(homePnlLayout);
-        homePnlLayout.setHorizontalGroup(
-            homePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(homePnlLayout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1464, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 456, Short.MAX_VALUE))
-        );
-        homePnlLayout.setVerticalGroup(
-            homePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(homePnlLayout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 513, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 532, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Home", homePnl);
-
-        aboutPnl.setBackground(new java.awt.Color(0, 0, 0));
-
-        javax.swing.GroupLayout aboutPnlLayout = new javax.swing.GroupLayout(aboutPnl);
-        aboutPnl.setLayout(aboutPnlLayout);
-        aboutPnlLayout.setHorizontalGroup(
-            aboutPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1920, Short.MAX_VALUE)
-        );
-        aboutPnlLayout.setVerticalGroup(
-            aboutPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1045, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("About Us", aboutPnl);
 
         adminPnl.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -339,7 +271,7 @@ public class UrbanCam extends javax.swing.JFrame {
                         .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(116, 116, 116)
                         .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(658, Short.MAX_VALUE))
+                .addContainerGap(866, Short.MAX_VALUE))
         );
         adminPnlLayout.setVerticalGroup(
             adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -364,20 +296,118 @@ public class UrbanCam extends javax.swing.JFrame {
                     .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(451, Short.MAX_VALUE))
+                .addContainerGap(552, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Admin Control", adminPnl);
+
+        homePnl.setBackground(new java.awt.Color(0, 0, 0));
+
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("SignPainter", 0, 82)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel3.setText("Urban");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 48)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel5.setText("Say Cheese");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel8.setText("For the best quality,");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel11.setText("at the best price.");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/urban/resources/camBg.jpg"))); // NOI18N
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 1650, 400));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/urban/resources/canon-2.png"))); // NOI18N
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/urban/resources/Logo-Insta360-2.png"))); // NOI18N
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/urban/resources/images-2.png"))); // NOI18N
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/urban/resources/dji-logo-2.png"))); // NOI18N
+
+        javax.swing.GroupLayout homePnlLayout = new javax.swing.GroupLayout(homePnl);
+        homePnl.setLayout(homePnlLayout);
+        homePnlLayout.setHorizontalGroup(
+            homePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(homePnlLayout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1464, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 664, Short.MAX_VALUE))
+            .addGroup(homePnlLayout.createSequentialGroup()
+                .addGap(128, 128, 128)
+                .addComponent(jLabel13)
+                .addGap(189, 189, 189)
+                .addComponent(jLabel14)
+                .addGap(174, 174, 174)
+                .addComponent(jLabel15)
+                .addGap(200, 200, 200)
+                .addComponent(jLabel16)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        homePnlLayout.setVerticalGroup(
+            homePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(homePnlLayout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 513, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(homePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(homePnlLayout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addGroup(homePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(homePnlLayout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addGroup(homePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel16)
+                                    .addComponent(jLabel15)))))
+                    .addGroup(homePnlLayout.createSequentialGroup()
+                        .addGap(118, 118, 118)
+                        .addComponent(jLabel14)))
+                .addContainerGap(405, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Our Story", homePnl);
+
+        aboutPnl.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout aboutPnlLayout = new javax.swing.GroupLayout(aboutPnl);
+        aboutPnl.setLayout(aboutPnlLayout);
+        aboutPnlLayout.setHorizontalGroup(
+            aboutPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2128, Short.MAX_VALUE)
+        );
+        aboutPnlLayout.setVerticalGroup(
+            aboutPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1146, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Contact Us", aboutPnl);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addGap(39, 39, 39))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout mainScreenLayout = new javax.swing.GroupLayout(mainScreen);
@@ -405,25 +435,22 @@ public class UrbanCam extends javax.swing.JFrame {
         loginScreen.setForeground(new java.awt.Color(242, 242, 242));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel4.setBackground(new java.awt.Color(102, 102, 102));
 
         usernameLbl.setBackground(new java.awt.Color(0, 0, 0));
         usernameLbl.setForeground(new java.awt.Color(242, 242, 242));
-        usernameLbl.setText("Username");
-        jPanel1.add(usernameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, -1, -1));
+        usernameLbl.setText("Username:");
 
         passLbl.setBackground(new java.awt.Color(0, 0, 0));
         passLbl.setForeground(new java.awt.Color(242, 242, 242));
-        passLbl.setText("Password");
-        jPanel1.add(passLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, -1, -1));
+        passLbl.setText("Password:");
 
         userField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(userField, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, 138, -1));
-        jPanel1.add(passField, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, 138, -1));
 
         loginBtn.setText("Login");
         loginBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -431,47 +458,117 @@ public class UrbanCam extends javax.swing.JFrame {
                 loginBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, -1, -1));
 
         loginError.setBackground(new java.awt.Color(0, 0, 0));
         loginError.setForeground(new java.awt.Color(242, 242, 242));
-        jPanel1.add(loginError, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 891, 349, 21));
 
         welcomeLbl.setBackground(new java.awt.Color(0, 0, 0));
         welcomeLbl.setFont(new java.awt.Font("Helvetica Neue", 0, 48)); // NOI18N
         welcomeLbl.setForeground(new java.awt.Color(242, 242, 242));
         welcomeLbl.setText("Log In");
-        jPanel1.add(welcomeLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, -1, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/urban/resources/loginBg.jpg"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 660, 450));
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(107, 107, 107)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(userField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(usernameLbl)
+                    .addComponent(passLbl)
+                    .addComponent(passField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(96, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(loginBtn)
+                .addGap(150, 150, 150))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(welcomeLbl)
+                .addGap(112, 112, 112))
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(6, 6, 6)
+                    .addComponent(loginError, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(18, Short.MAX_VALUE)))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(welcomeLbl)
+                .addGap(48, 48, 48)
+                .addComponent(usernameLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(userField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(passLbl)
+                .addGap(18, 18, 18)
+                .addComponent(passField, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(loginBtn)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(665, 665, 665)
+                    .addComponent(loginError, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
 
-        jLabel7.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel7.setFont(new java.awt.Font("DIN Alternate", 0, 48)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(242, 242, 242));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(264, 264, 264)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(962, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(335, Short.MAX_VALUE))
+        );
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/urban/resources/bg.jpeg"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(jLabel4)
+                .addGap(0, 215, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout loginScreenLayout = new javax.swing.GroupLayout(loginScreen);
         loginScreen.setLayout(loginScreenLayout);
         loginScreenLayout.setHorizontalGroup(
             loginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(loginScreenLayout.createSequentialGroup()
-                .addGroup(loginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(loginScreenLayout.createSequentialGroup()
-                        .addGap(639, 639, 639)
-                        .addComponent(jLabel7))
-                    .addGroup(loginScreenLayout.createSequentialGroup()
-                        .addGap(314, 314, 314)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 768, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1580, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(677, Short.MAX_VALUE))
         );
         loginScreenLayout.setVerticalGroup(
             loginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(loginScreenLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel7)
-                .addGap(65, 65, 65)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(595, Short.MAX_VALUE))
+                .addGap(192, 192, 192)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(loginScreenLayout.createSequentialGroup()
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 98, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -627,7 +724,7 @@ public class UrbanCam extends javax.swing.JFrame {
         try{
             if (!ValidationUtil.isIdValid(idText)) {
                 System.out.println("Please Enter a Valid College ID");
-                errorOrNormalField(idField, "CollegeId", idError, "Enter Valid ID", Color.red, rootPaneCheckingEnabled);
+                errorOrNormalField(idField, "Id", idError, "Enter Valid ID", Color.red, rootPaneCheckingEnabled);
                 return;
             }
             
@@ -657,7 +754,8 @@ public class UrbanCam extends javax.swing.JFrame {
             errorOrNormalField(idField, "Id", idError, "", Color.black, rootPaneCheckingEnabled);
             errorOrNormalField(nameField, "Name", nameError, "", Color.black, rootPaneCheckingEnabled);
             errorOrNormalField(priceField, "Price", priceError, "", Color.black, rootPaneCheckingEnabled);
-            
+            errorOrNormalField(stockField, "Stock", priceError, "", Color.black, rootPaneCheckingEnabled);
+          
 
 
             clearCameraForm();
@@ -676,7 +774,7 @@ public class UrbanCam extends javax.swing.JFrame {
         
         try{
             if (!ValidationUtil.isIdValid(idText)) {
-                errorOrNormalField(idField, "CollegeId", idError, "Enter Valid ID", Color.red, rootPaneCheckingEnabled);
+                errorOrNormalField(idField, "Id", idError, "Enter Valid ID", Color.red, rootPaneCheckingEnabled);
                 return;
             }
 
@@ -712,9 +810,10 @@ public class UrbanCam extends javax.swing.JFrame {
 
             JOptionPane.showMessageDialog(null, "Updated", "Update Complete", JOptionPane.INFORMATION_MESSAGE);  
             
-            errorOrNormalField(idField, "CId", idError, "", Color.black, rootPaneCheckingEnabled);
+            errorOrNormalField(idField, "Id", idError, "", Color.black, rootPaneCheckingEnabled);
             errorOrNormalField(nameField, "Name", nameError, "", Color.black, rootPaneCheckingEnabled);
             errorOrNormalField(priceField, "Price", priceError, "", Color.black, rootPaneCheckingEnabled);
+            errorOrNormalField(stockField, "Stock", priceError, "", Color.black, rootPaneCheckingEnabled);
 
             clearCameraForm();
         }catch(NumberFormatException e){
@@ -800,20 +899,23 @@ public class UrbanCam extends javax.swing.JFrame {
     private javax.swing.JLabel idError;
     private javax.swing.JTextField idField;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JProgressBar loadBar;
