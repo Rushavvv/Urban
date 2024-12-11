@@ -86,7 +86,8 @@ public class UrbanCam extends javax.swing.JFrame {
             Cam.getId(), 
             Cam.getName(), 
             Cam.getPrice(),
-            Cam.getStock()
+            Cam.getStock(),
+            Cam.getResolution()
         });
     }
     
@@ -109,10 +110,12 @@ public class UrbanCam extends javax.swing.JFrame {
         nameField = new javax.swing.JTextField();
         priceField = new javax.swing.JTextField();
         stockField = new javax.swing.JTextField();
+        resolutionField = new javax.swing.JTextField();
         idError = new javax.swing.JLabel();
         nameError = new javax.swing.JLabel();
         priceError = new javax.swing.JLabel();
         stockError = new javax.swing.JLabel();
+        resolutionError = new javax.swing.JLabel();
         addBtn = new javax.swing.JButton();
         updateBtn = new javax.swing.JButton();
         deleteBtn = new javax.swing.JButton();
@@ -208,6 +211,15 @@ public class UrbanCam extends javax.swing.JFrame {
             }
         });
 
+        resolutionField.setBackground(new java.awt.Color(0, 0, 0));
+        resolutionField.setForeground(new java.awt.Color(242, 242, 242));
+        resolutionField.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Resolution", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Helvetica Neue", 0, 13), new java.awt.Color(242, 242, 242))); // NOI18N
+        resolutionField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resolutionFieldActionPerformed(evt);
+            }
+        });
+
         idError.setForeground(new java.awt.Color(255, 0, 51));
 
         nameError.setForeground(new java.awt.Color(204, 0, 0));
@@ -215,6 +227,8 @@ public class UrbanCam extends javax.swing.JFrame {
         priceError.setForeground(new java.awt.Color(204, 0, 0));
 
         stockError.setForeground(new java.awt.Color(204, 0, 0));
+
+        resolutionError.setForeground(new java.awt.Color(204, 0, 0));
 
         addBtn.setBackground(new java.awt.Color(0, 0, 0));
         addBtn.setForeground(new java.awt.Color(242, 242, 242));
@@ -252,68 +266,80 @@ public class UrbanCam extends javax.swing.JFrame {
             adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(adminPnlLayout.createSequentialGroup()
                 .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(adminPnlLayout.createSequentialGroup()
+                            .addGap(356, 356, 356)
+                            .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(adminPnlLayout.createSequentialGroup()
+                                    .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(98, 98, 98)
+                                    .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(nameError, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(idError, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(99, 99, 99)
+                            .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(priceField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(priceError, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(82, 82, 82)
+                            .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(adminPnlLayout.createSequentialGroup()
+                                    .addGap(6, 6, 6)
+                                    .addComponent(stockError, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminPnlLayout.createSequentialGroup()
+                                    .addComponent(stockField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(adminPnlLayout.createSequentialGroup()
+                                            .addGap(6, 6, 6)
+                                            .addComponent(resolutionError, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(resolutionField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGroup(adminPnlLayout.createSequentialGroup()
+                            .addGap(173, 173, 173)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1089, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(adminPnlLayout.createSequentialGroup()
-                        .addGap(173, 173, 173)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1089, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(adminPnlLayout.createSequentialGroup()
-                        .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(adminPnlLayout.createSequentialGroup()
-                                .addGap(356, 356, 356)
-                                .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(adminPnlLayout.createSequentialGroup()
-                                .addGap(362, 362, 362)
-                                .addComponent(idError, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(98, 98, 98)
-                        .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(adminPnlLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(nameError, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(99, 99, 99)
-                        .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(priceField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(adminPnlLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(priceError, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(82, 82, 82)
-                        .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(adminPnlLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(stockError, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(stockField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(adminPnlLayout.createSequentialGroup()
-                        .addGap(479, 479, 479)
+                        .addGap(480, 480, 480)
                         .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(126, 126, 126)
+                        .addGap(120, 120, 120)
                         .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(116, 116, 116)
+                        .addGap(139, 139, 139)
                         .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(866, Short.MAX_VALUE))
         );
         adminPnlLayout.setVerticalGroup(
             adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(adminPnlLayout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(priceField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(stockField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(nameError, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(priceError, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(idError, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(stockError, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(100, 100, 100)
-                .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(552, Short.MAX_VALUE))
+                    .addGroup(adminPnlLayout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(priceField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(stockField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(resolutionField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(stockError, javax.swing.GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
+                            .addComponent(priceError, javax.swing.GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
+                            .addComponent(idError, javax.swing.GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
+                            .addComponent(resolutionError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(adminPnlLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(nameError, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(99, 99, 99)
+                .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(adminPnlLayout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(adminPnlLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(535, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Admin Control", adminPnl);
@@ -453,7 +479,7 @@ public class UrbanCam extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        jPanel4.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel4.setBackground(new java.awt.Color(35, 45, 63));
 
         usernameLbl.setBackground(new java.awt.Color(0, 0, 0));
         usernameLbl.setForeground(new java.awt.Color(242, 242, 242));
@@ -708,7 +734,8 @@ public class UrbanCam extends javax.swing.JFrame {
                 camera.getId(),
                 camera.getName(),
                 camera.getPrice(),
-                camera.getStock()
+                camera.getStock(),
+                camera.getResolution()
             }));
     }
     
@@ -717,6 +744,7 @@ public class UrbanCam extends javax.swing.JFrame {
         nameField.setText("");
         priceField.setText("");
         stockField.setText("");
+        resolutionField.setText("");
     }
     
     private void errorOrNormalField(JTextField textField, String fieldName, JLabel errorLbl, String errorMsg, Color color, boolean isError){
@@ -737,6 +765,7 @@ public class UrbanCam extends javax.swing.JFrame {
         String name = nameField.getText().trim();
         String price = priceField.getText().trim();
         String stock = stockField.getText().trim();
+        String resolution = resolutionField.getText().trim();
         
         try{
             if (!ValidationUtil.isIdValid(idText)) {
@@ -758,11 +787,12 @@ public class UrbanCam extends javax.swing.JFrame {
                 return;
             }
 
-            Camera cam = new Camera(Integer.parseInt(idText), name, Integer.parseInt(price), Integer.parseInt(stock));
+            Camera cam = new Camera(Integer.parseInt(idText), name, Integer.parseInt(price), Integer.parseInt(stock), Integer.parseInt(resolution));
             System.out.println("Camera Added: " + cam.getName() + "\n" +
                                "Id: " + cam.getId()+ "\n" +
                                "Price: " + cam.getPrice() + "\n" +
-                               "In Stock: " + cam.getStock());
+                               "In Stock: " + cam.getStock() + "\n" + 
+                               "Resolution: " + cam.getResolution());
 
             camList.add(cam);
 
@@ -771,7 +801,9 @@ public class UrbanCam extends javax.swing.JFrame {
             errorOrNormalField(idField, "Id", idError, "", Color.black, rootPaneCheckingEnabled);
             errorOrNormalField(nameField, "Name", nameError, "", Color.black, rootPaneCheckingEnabled);
             errorOrNormalField(priceField, "Price", priceError, "", Color.black, rootPaneCheckingEnabled);
-            errorOrNormalField(stockField, "Stock", priceError, "", Color.black, rootPaneCheckingEnabled);
+            errorOrNormalField(stockField, "Stock", stockError, "", Color.black, rootPaneCheckingEnabled);
+            errorOrNormalField(resolutionField, "Resolution", resolutionError, "", Color.black, rootPaneCheckingEnabled);
+
           
 
 
@@ -871,6 +903,10 @@ public class UrbanCam extends javax.swing.JFrame {
         clearCameraForm();
     }//GEN-LAST:event_deleteBtnActionPerformed
 
+    private void resolutionFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resolutionFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_resolutionFieldActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -947,6 +983,8 @@ public class UrbanCam extends javax.swing.JFrame {
     private javax.swing.JLabel passLbl;
     private javax.swing.JLabel priceError;
     private javax.swing.JTextField priceField;
+    private javax.swing.JLabel resolutionError;
+    private javax.swing.JTextField resolutionField;
     private javax.swing.JLabel stockError;
     private javax.swing.JTextField stockField;
     private javax.swing.JButton updateBtn;

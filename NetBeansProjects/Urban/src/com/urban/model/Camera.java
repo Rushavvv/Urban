@@ -12,17 +12,19 @@ public class Camera {
     private int id;  
     private int price;            
     private int stock; 
+    private int resolution;
     private String name; 
     
     public Camera(){
         
     }
     
-    public Camera(int id, String name, int price, int stock){
+    public Camera(int id, String name, int price, int stock, int resolution){
         this.id = id;
         this.name = name;
         this.price = price;
         this.stock = stock;
+        this.resolution = resolution;
              
     }
 
@@ -37,10 +39,15 @@ public class Camera {
     public int getStock() {
         return stock;
     }
+    
+    public int getResolution() {
+        return resolution;
+    }
 
     public String getName() {
         return name;
     }
+    
 
     public void setId(int id) {
         this.id = id;
@@ -53,10 +60,15 @@ public class Camera {
     public void setStock(int stock) {
         this.stock = stock;
     }
+    
+    public void setResolution(int resolution) {
+        this.resolution = resolution;
+    }
 
     public void setName(String name) {
         this.name = name;
     }
+    
             
     
 }
