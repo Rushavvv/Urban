@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.urban.model;
+import java.util.Date;
 
 /**
  *
@@ -13,7 +14,8 @@ public class Camera {
     private int price;            
     private int stock; 
     private int resolution;
-    private String name; 
+    private String name;
+    private Date date;
     
     public Camera(){
         
@@ -48,6 +50,9 @@ public class Camera {
         return name;
     }
     
+    public Date getDate() {
+        return date;
+    }
 
     public void setId(int id) {
         this.id = id;
@@ -69,7 +74,9 @@ public class Camera {
         this.name = name;
     }
     
-            
+    public void setDate(Date date) {
+        this.date = date;
+    }      
     
 }
 
