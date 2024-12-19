@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.urban.model;
-import java.util.Date;
 
 /**
  *
@@ -13,20 +12,21 @@ public class Camera {
     private int id;  
     private int price;            
     private int stock; 
-    private int resolution;
+    private String resolution;
     private String name;
-    private Date date;
+    private String date;
     
     public Camera(){
         
     }
     
-    public Camera(int id, String name, int price, int stock, int resolution){
+    public Camera(int id, String name, int price, int stock, String resolution, String date){
         this.id = id;
         this.name = name;
         this.price = price;
         this.stock = stock;
         this.resolution = resolution;
+        this.date = date;
              
     }
 
@@ -42,7 +42,7 @@ public class Camera {
         return stock;
     }
     
-    public int getResolution() {
+    public String getResolution() {
         return resolution;
     }
 
@@ -50,7 +50,7 @@ public class Camera {
         return name;
     }
     
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
@@ -66,7 +66,7 @@ public class Camera {
         this.stock = stock;
     }
     
-    public void setResolution(int resolution) {
+    public void setResolution(String resolution) {
         this.resolution = resolution;
     }
 
@@ -74,7 +74,7 @@ public class Camera {
         this.name = name;
     }
     
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }      
     

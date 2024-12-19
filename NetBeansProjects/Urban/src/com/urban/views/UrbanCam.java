@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.Timer;
-
+import javax.swing.border.TitledBorder;
 
 
 /**
@@ -25,7 +25,6 @@ import javax.swing.Timer;
 public class UrbanCam extends javax.swing.JFrame {
     private List<Camera> camList;
     private java.awt.CardLayout cardLayout;
-
     /**
      * Creates new form UrbanCam
      */
@@ -34,6 +33,7 @@ public class UrbanCam extends javax.swing.JFrame {
         initializeLayout(); // Set up CardLayout and add screens
         initializeData();
         startProgress(); // Show loading screen and initiate progress    
+        dummyData();
     }
 
     
@@ -125,8 +125,6 @@ public class UrbanCam extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         adminPnl = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        camTable = new javax.swing.JTable();
         idField = new javax.swing.JTextField();
         nameField = new javax.swing.JTextField();
         priceField = new javax.swing.JTextField();
@@ -142,6 +140,9 @@ public class UrbanCam extends javax.swing.JFrame {
         updateBtn = new javax.swing.JButton();
         deleteBtn = new javax.swing.JButton();
         dateField = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        camTable = new javax.swing.JTable();
         homePnl = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -175,52 +176,30 @@ public class UrbanCam extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
-        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+        mainScreen.setForeground(new java.awt.Color(242, 242, 242));
+
         jPanel3.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jPanel3.setMinimumSize(new java.awt.Dimension(1920, 1080));
         jPanel3.setPreferredSize(new java.awt.Dimension(1920, 1080));
 
-        jTabbedPane1.setBackground(new java.awt.Color(0, 0, 0));
-        jTabbedPane1.setForeground(new java.awt.Color(242, 242, 242));
-
-        adminPnl.setBackground(new java.awt.Color(0, 0, 0));
-
-        camTable.setBackground(new java.awt.Color(0, 0, 0));
-        camTable.setForeground(new java.awt.Color(242, 242, 242));
-        camTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "ID", "Name", "Price", "Stock"
-            }
-        ));
-        jScrollPane1.setViewportView(camTable);
-
-        idField.setBackground(new java.awt.Color(0, 0, 0));
-        idField.setForeground(new java.awt.Color(242, 242, 242));
-        idField.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ID", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Helvetica Neue", 0, 13), new java.awt.Color(242, 242, 242))); // NOI18N
+        idField.setBackground(new java.awt.Color(242, 242, 242));
+        idField.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "ID", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP));
         idField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idFieldActionPerformed(evt);
             }
         });
 
-        nameField.setBackground(new java.awt.Color(0, 0, 0));
-        nameField.setForeground(new java.awt.Color(242, 242, 242));
-        nameField.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Name", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Helvetica Neue", 0, 13), new java.awt.Color(242, 242, 242))); // NOI18N
+        nameField.setBackground(new java.awt.Color(242, 242, 242));
+        nameField.setBorder(javax.swing.BorderFactory.createTitledBorder("Name"));
         nameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameFieldActionPerformed(evt);
             }
         });
 
-        priceField.setBackground(new java.awt.Color(0, 0, 0));
-        priceField.setForeground(new java.awt.Color(242, 242, 242));
-        priceField.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Price", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Helvetica Neue", 0, 13), new java.awt.Color(242, 242, 242))); // NOI18N
+        priceField.setBackground(new java.awt.Color(242, 242, 242));
+        priceField.setBorder(javax.swing.BorderFactory.createTitledBorder("Price"));
         priceField.setCaretColor(new java.awt.Color(242, 242, 242));
         priceField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,9 +207,8 @@ public class UrbanCam extends javax.swing.JFrame {
             }
         });
 
-        stockField.setBackground(new java.awt.Color(0, 0, 0));
-        stockField.setForeground(new java.awt.Color(242, 242, 242));
-        stockField.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Stock", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Helvetica Neue", 0, 13), new java.awt.Color(242, 242, 242))); // NOI18N
+        stockField.setBackground(new java.awt.Color(242, 242, 242));
+        stockField.setBorder(javax.swing.BorderFactory.createTitledBorder("Stock"));
         stockField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 stockFieldActionPerformed(evt);
@@ -259,6 +237,7 @@ public class UrbanCam extends javax.swing.JFrame {
         addBtn.setBackground(new java.awt.Color(0, 0, 0));
         addBtn.setForeground(new java.awt.Color(242, 242, 242));
         addBtn.setText("Add");
+        addBtn.setBorder(null);
         addBtn.setBorderPainted(false);
         addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -290,6 +269,24 @@ public class UrbanCam extends javax.swing.JFrame {
         dateField.setForeground(new java.awt.Color(242, 242, 242));
         dateField.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Date", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Helvetica Neue", 0, 13), new java.awt.Color(242, 242, 242))); // NOI18N
 
+        jTextField1.setBackground(new java.awt.Color(0, 0, 0));
+        jTextField1.setForeground(new java.awt.Color(242, 242, 242));
+        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "dum", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Helvetica Neue", 0, 13), new java.awt.Color(242, 242, 242))); // NOI18N
+
+        camTable.setBackground(new java.awt.Color(242, 242, 242));
+        camTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Name", "Price", "Stock", "Resolution", "Date"
+            }
+        ));
+        jScrollPane1.setViewportView(camTable);
+
         javax.swing.GroupLayout adminPnlLayout = new javax.swing.GroupLayout(adminPnl);
         adminPnl.setLayout(adminPnlLayout);
         adminPnlLayout.setHorizontalGroup(
@@ -297,57 +294,57 @@ public class UrbanCam extends javax.swing.JFrame {
             .addGroup(adminPnlLayout.createSequentialGroup()
                 .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(adminPnlLayout.createSequentialGroup()
-                        .addGap(238, 238, 238)
-                        .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(adminPnlLayout.createSequentialGroup()
-                                .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(adminPnlLayout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(idError, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(66, 66, 66)
-                                .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(adminPnlLayout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(nameError, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(22, 22, 22))
-                            .addGroup(adminPnlLayout.createSequentialGroup()
+                                .addGap(417, 417, 417)
                                 .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(35, 35, 35)))
+                                .addGap(191, 191, 191)
+                                .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminPnlLayout.createSequentialGroup()
+                                .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(adminPnlLayout.createSequentialGroup()
+                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(adminPnlLayout.createSequentialGroup()
+                                                .addGap(6, 6, 6)
+                                                .addComponent(resolutionError, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(resolutionField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(8, 8, 8))
+                                    .addGroup(adminPnlLayout.createSequentialGroup()
+                                        .addGap(160, 160, 160)
+                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(adminPnlLayout.createSequentialGroup()
+                                                .addGap(6, 6, 6)
+                                                .addComponent(idError, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(75, 75, 75)
+                                        .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(adminPnlLayout.createSequentialGroup()
+                                                .addGap(6, 6, 6)
+                                                .addComponent(nameError, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(88, 88, 88)))
                         .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(adminPnlLayout.createSequentialGroup()
-                                .addGap(49, 49, 49)
+                                .addGap(173, 173, 173)
+                                .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(adminPnlLayout.createSequentialGroup()
                                 .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(priceField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(adminPnlLayout.createSequentialGroup()
                                         .addGap(6, 6, 6)
                                         .addComponent(priceError, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(75, 75, 75)
+                                .addGap(77, 77, 77)
                                 .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(stockField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(adminPnlLayout.createSequentialGroup()
                                         .addGap(6, 6, 6)
-                                        .addComponent(stockError, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(stockField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(adminPnlLayout.createSequentialGroup()
-                                .addGap(153, 153, 153)
-                                .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(19, 19, 19)
-                        .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(adminPnlLayout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(resolutionField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(resolutionError, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(64, 64, 64)
-                                .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(adminPnlLayout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(dateError, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(adminPnlLayout.createSequentialGroup()
-                                .addGap(42, 42, 42)
-                                .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(stockError, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(dateError, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(adminPnlLayout.createSequentialGroup()
                         .addGap(190, 190, 190)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1109, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -363,23 +360,32 @@ public class UrbanCam extends javax.swing.JFrame {
                     .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(priceField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(stockField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(resolutionField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(stockField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(idError, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nameError, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(priceError, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(stockError, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(adminPnlLayout.createSequentialGroup()
+                        .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(idError, javax.swing.GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
+                            .addComponent(priceError, javax.swing.GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
+                            .addComponent(stockError, javax.swing.GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
+                            .addComponent(nameError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(193, 193, 193))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminPnlLayout.createSequentialGroup()
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(resolutionField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(resolutionError, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dateError, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(86, 86, 86)
+                .addGap(38, 38, 38)
                 .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(566, Short.MAX_VALUE))
+                .addContainerGap(351, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Admin Control", adminPnl);
@@ -482,14 +488,14 @@ public class UrbanCam extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 2128, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addGap(39, 39, 39))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1181, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
 
@@ -676,7 +682,7 @@ public class UrbanCam extends javax.swing.JFrame {
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(70, 70, 70)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(577, Short.MAX_VALUE))
+                .addContainerGap(710, Short.MAX_VALUE))
         );
         loadingScreenLayout.setVerticalGroup(
             loadingScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -699,7 +705,7 @@ public class UrbanCam extends javax.swing.JFrame {
                 .addComponent(loadBar, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(progLabel)
-                .addContainerGap(449, Short.MAX_VALUE))
+                .addContainerGap(471, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -743,10 +749,6 @@ public class UrbanCam extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_loginBtnActionPerformed
 
-    private void idFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idFieldActionPerformed
-
     private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameFieldActionPerformed
@@ -764,7 +766,7 @@ public class UrbanCam extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel) camTable.getModel();
 
             model.setRowCount(0);
-            
+                  
             camList.forEach(camera -> model.addRow(new Object[]{
                 camera.getId(),
                 camera.getName(),
@@ -773,6 +775,14 @@ public class UrbanCam extends javax.swing.JFrame {
                 camera.getResolution(),
                 camera.getDate()
             }));
+    }
+    
+    private void dummyData() {
+            camList.add(new Camera(1, "Camera A", 500, 20, "1080p", "01-06-2024"));
+            camList.add(new Camera(2, "Camera B", 700, 15, "4K", "01-06-2024"));
+            camList.add(new Camera(3, "Camera C", 300, 50, "720p", "01-06-2024"));
+            camList.add(new Camera(4, "Camera D", 1000, 10, "8K", "01-06-2024"));
+   
     }
     
     private void clearCameraForm(){
@@ -825,7 +835,7 @@ public class UrbanCam extends javax.swing.JFrame {
                 return;
             }
 
-            Camera cam = new Camera(Integer.parseInt(idText), name, Integer.parseInt(price), Integer.parseInt(stock), Integer.parseInt(resolution));
+            Camera cam = new Camera(Integer.parseInt(idText), name, Integer.parseInt(price), Integer.parseInt(stock), resolution, date);
             System.out.println("Camera Added: " + cam.getName() + "\n" +
                                "Id: " + cam.getId()+ "\n" +
                                "Price: " + cam.getPrice() + "\n" +
@@ -953,6 +963,10 @@ public class UrbanCam extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_resolutionFieldActionPerformed
 
+    private void idFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idFieldActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -986,9 +1000,7 @@ public class UrbanCam extends javax.swing.JFrame {
                 new UrbanCam().setVisible(true);
             }
         });
-        
 
-        
         
     }
 
@@ -1025,6 +1037,7 @@ public class UrbanCam extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JProgressBar loadBar;
     private javax.swing.JPanel loadingScreen;
     private javax.swing.JButton loginBtn;
