@@ -11,11 +11,11 @@ import javax.swing.JOptionPane;
  */
 public class ValidationUtil extends Camera{
    
-    public static boolean isIdValid(String camId) {
+    public static boolean isIdInRange(String camId) {
         try {
             int id = Integer.parseInt(camId);
             
-            if(id < 1000 || id > 9999){
+            if(id < 100000 || id > 999999){
                return false;
             }
             
@@ -28,8 +28,30 @@ public class ValidationUtil extends Camera{
         }
     }
     
+    public static boolean isIdStartCorrect(String camId) {
+        try {            
+            if(!camId.matches("^13\\d{4}$")){
+               return false;
+            }
+            return true;
+            
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "LMU Id Is Not Valid", "Invalid College ID", JOptionPane.ERROR_MESSAGE);  
+            return true; 
+        }
+    }
+    
     public static boolean isNameValid(String name) {
          return name.matches("^[a-zA-Z ]+$");
+    }
+    
+    public static boolean isnum(String num){
+        try {
+            Integer.parseInt(num); 
+            return true;           
+        } catch (NumberFormatException e) {
+            return false;            
+        }
     }
     
     public static boolean isPriceValid(String price) {
