@@ -12,7 +12,7 @@ public class Camera {
     private int id;  
     private int price;            
     private int stock; 
-    private String resolution;
+    private int resolution;
     private String name;
     private String date;
     
@@ -20,7 +20,7 @@ public class Camera {
         
     }
     
-    public Camera(int id, String name, int price, int stock, String resolution, String date){
+    public Camera(int id, String name, int price, int stock, int resolution, String date){
         this.id = id;
         this.name = name;
         this.price = price;
@@ -42,7 +42,7 @@ public class Camera {
         return stock;
     }
     
-    public String getResolution() {
+    public int getResolution() {
         return resolution;
     }
 
@@ -66,7 +66,7 @@ public class Camera {
         this.stock = stock;
     }
     
-    public void setResolution(String resolution) {
+    public void setResolution(int resolution) {
         this.resolution = resolution;
     }
 

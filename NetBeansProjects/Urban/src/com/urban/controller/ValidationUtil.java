@@ -72,6 +72,42 @@ public class ValidationUtil extends Camera{
         
     }
     
+    public static boolean isStockEnough(String stock){
+        try {
+            int stoc = Integer.parseInt(stock);
+            
+            if(stoc > 20){
+               return false;
+            }
+            
+            return true;
+            
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Stock Invalid", "Invalid Stock", JOptionPane.ERROR_MESSAGE);  
+
+            return true; 
+        }
+    }
+    
+    
+    
+    public static boolean isResolutionInRange(String resolution){
+        try {
+            int reso = Integer.parseInt(resolution);
+            
+            if(reso < 10 || reso > 100){
+               return false;
+            }
+            
+            return true;
+            
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Megapixel Invalid", "Invalid Megapixels", JOptionPane.ERROR_MESSAGE);  
+
+            return true; 
+        }
+    }
+    
     public static boolean IsEmpty(String value){
             return value == null || value.trim().isEmpty();
     }
