@@ -53,7 +53,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="3" max="32767" attributes="0"/>
                       <Component id="tabbedPane" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   </Group>
@@ -104,63 +104,68 @@
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="332" max="-2" attributes="0"/>
+                                                      <Component id="idError" min="-2" pref="142" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace min="-2" pref="346" max="-2" attributes="0"/>
                                                       <Group type="103" groupAlignment="0" attributes="0">
                                                           <Component id="idField" min="-2" pref="115" max="-2" attributes="0"/>
                                                           <Component id="storageField" min="-2" pref="115" max="-2" attributes="0"/>
                                                           <Component id="storageError" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
                                                       </Group>
-                                                      <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
                                                       <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="resolutionField" min="-2" pref="115" max="-2" attributes="0"/>
-                                                          <Component id="nameField" min="-2" pref="115" max="-2" attributes="0"/>
                                                           <Group type="102" attributes="0">
-                                                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                                              <Component id="nameError" min="-2" pref="101" max="-2" attributes="0"/>
+                                                              <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                                  <Component id="resolutionField" min="-2" pref="115" max="-2" attributes="0"/>
+                                                                  <Component id="nameField" min="-2" pref="115" max="-2" attributes="0"/>
+                                                                  <Group type="102" attributes="0">
+                                                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                                                      <Component id="nameError" min="-2" pref="101" max="-2" attributes="0"/>
+                                                                  </Group>
+                                                              </Group>
+                                                          </Group>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                                                              <Component id="resolutionError" min="-2" pref="191" max="-2" attributes="0"/>
                                                           </Group>
                                                       </Group>
                                                   </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace min="-2" pref="332" max="-2" attributes="0"/>
-                                                      <Component id="idError" min="-2" pref="142" max="-2" attributes="0"/>
-                                                  </Group>
                                               </Group>
-                                              <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Group type="103" groupAlignment="1" attributes="0">
-                                                          <Component id="priceField" alignment="1" min="-2" pref="115" max="-2" attributes="0"/>
-                                                          <Component id="dateField" alignment="1" min="-2" pref="115" max="-2" attributes="0"/>
-                                                          <Component id="dateError" alignment="1" min="-2" pref="115" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="priceField" min="-2" pref="115" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="1" attributes="0">
+                                                      <Component id="dateField" min="-2" pref="115" max="-2" attributes="0"/>
+                                                      <Component id="dateError" min="-2" pref="115" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Component id="priceError" alignment="0" min="-2" pref="101" max="-2" attributes="0"/>
+                                                  <Component id="priceError" min="-2" pref="139" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="535" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="resolutionError" min="-2" pref="152" max="-2" attributes="0"/>
-                                                  <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
-                                              </Group>
+                                              <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <EmptySpace min="96" pref="96" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
+                                              <Component id="jButton2" min="-2" pref="103" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="stockField" alignment="1" min="-2" pref="115" max="-2" attributes="0"/>
-                                                  <Component id="dateError2" alignment="1" min="-2" pref="115" max="-2" attributes="0"/>
-                                                  <Component id="jButton2" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
+                                                  <Component id="jComboBox1" min="-2" pref="112" max="-2" attributes="0"/>
+                                                  <Component id="stockField" min="-2" pref="115" max="-2" attributes="0"/>
+                                                  <Component id="stockError" alignment="0" min="-2" pref="154" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jComboBox1" alignment="1" max="32767" attributes="0"/>
-                                                  <Component id="stockError" min="-2" pref="101" max="-2" attributes="0"/>
-                                              </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="dateError2" min="-2" pref="115" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -173,80 +178,81 @@
                                       <Component id="deleteBtn" min="-2" pref="93" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="636" max="32767" attributes="0"/>
+                              <EmptySpace pref="639" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                                      <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="232" max="-2" attributes="0"/>
+                                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                                              <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="232" max="-2" attributes="0"/>
-                                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="nameField" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="idField" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="stockField" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="priceField" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                                                      <Component id="idError" min="-2" pref="17" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="stockError" min="-2" pref="17" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="priceError" min="-2" pref="17" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
-                                          <Component id="nameError" min="-2" pref="17" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="priceField" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="storageField" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="resolutionField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="nameField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="idField" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="dateField" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="stockField" alignment="1" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="resolutionError" min="-2" pref="17" max="-2" attributes="0"/>
-                                                  <Component id="storageError" min="-2" pref="17" max="-2" attributes="0"/>
-                                              </Group>
+                                              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                                              <Component id="idError" min="-2" pref="17" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" alignment="1" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="dateError2" min="-2" pref="17" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="stockError" pref="17" max="32767" attributes="0"/>
+                                                  <Component id="priceError" max="32767" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <Component id="dateError" min="-2" pref="17" max="-2" attributes="0"/>
+                                  <Component id="nameError" min="-2" pref="17" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="storageField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="resolutionField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="dateField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="storageError" min="-2" pref="17" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="resolutionError" min="-2" pref="17" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="dateError" min="-2" pref="17" max="-2" attributes="0"/>
+                                          <Component id="dateError2" min="-2" pref="17" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="addBtn" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                                   <Component id="updateBtn" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
@@ -566,8 +572,8 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Contact Us">
-                        <Property name="tabTitle" type="java.lang.String" value="Contact Us"/>
+                      <JTabbedPaneConstraints tabName="Dashboard">
+                        <Property name="tabTitle" type="java.lang.String" value="Dashboard"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -580,7 +586,7 @@
                               <Component id="sortComboBox" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                               <Component id="jScrollPane1" min="-2" pref="1109" max="-2" attributes="0"/>
-                              <EmptySpace pref="820" max="32767" attributes="0"/>
+                              <EmptySpace pref="823" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -597,7 +603,7 @@
                                       <Component id="sortComboBox" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="731" max="32767" attributes="0"/>
+                              <EmptySpace pref="1082" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -613,29 +619,38 @@
                         <Component class="javax.swing.JTable" name="camTable">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="2c" green="19" red="b" type="rgb"/>
-                            </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                              <Color blue="d9" green="e5" red="f1" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="6" rowCount="4">
-                                <Column editable="true" title="ID" type="java.lang.Object"/>
-                                <Column editable="true" title="Name" type="java.lang.Object"/>
-                                <Column editable="true" title="Price" type="java.lang.Object"/>
-                                <Column editable="true" title="Stock" type="java.lang.Object"/>
-                                <Column editable="true" title="MegaPixel" type="java.lang.Object"/>
-                                <Column editable="true" title="Date" type="java.lang.Object"/>
+                              <Table columnCount="8" rowCount="4">
+                                <Column editable="false" title="ID" type="java.lang.Object"/>
+                                <Column editable="false" title="Name" type="java.lang.Object"/>
+                                <Column editable="false" title="Price" type="java.lang.Object"/>
+                                <Column editable="false" title="Stock" type="java.lang.Object"/>
+                                <Column editable="false" title="MegaPixel" type="java.lang.Object"/>
+                                <Column editable="false" title="Date" type="java.lang.Object"/>
+                                <Column editable="true" title="Storage" type="java.lang.Object"/>
+                                <Column editable="true" title="Flash" type="java.lang.Object"/>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                               <TableColumnModel selectionModel="0">
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
@@ -708,7 +723,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jPanel2" min="-2" pref="1464" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="664" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="667" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
@@ -746,7 +761,7 @@
                                       <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="455" max="32767" attributes="0"/>
+                              <EmptySpace pref="756" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1104,12 +1119,12 @@
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                  <Color blue="0" green="0" red="ff" type="rgb"/>
                 </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="190" y="390" width="160" height="20"/>
+                  <AbsoluteConstraints x="150" y="390" width="270" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>

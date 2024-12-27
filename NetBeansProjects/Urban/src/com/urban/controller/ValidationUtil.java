@@ -4,13 +4,17 @@
  */
 package com.urban.controller;
 import com.urban.model.Camera;
+import java.util.List;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author rushav
  */
 public class ValidationUtil extends Camera{
-   
+        List<String> store = new ArrayList<>();
+        
     public static boolean isIdInRange(String camId) {
         try {
             int id = Integer.parseInt(camId);
@@ -53,6 +57,7 @@ public class ValidationUtil extends Camera{
             return false;            
         }
     }
+    
     
     public static boolean isPriceValid(String price) {
         try {
@@ -103,6 +108,17 @@ public class ValidationUtil extends Camera{
             
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Megapixel Invalid", "Invalid Megapixels", JOptionPane.ERROR_MESSAGE);  
+
+            return true; 
+        }
+    }
+    
+    public static boolean isStorageValid(String Storage){
+        try{
+            
+           return true;
+        }catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Storage Invalid", "Invalid Storage", JOptionPane.ERROR_MESSAGE);  
 
             return true; 
         }
