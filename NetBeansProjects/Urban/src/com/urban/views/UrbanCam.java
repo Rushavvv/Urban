@@ -1118,10 +1118,10 @@ public class UrbanCam extends javax.swing.JFrame {
         List<Camera> sortedList;
 
         // Check the sorting order and sort accordingly
-        if (order == 1) { // Alphabetically
+        if (order == 1) { // Most in stock
             sortedList = mergeSort.sortByStockAscending(camList);
             loadListToTable(sortedList);
-        } else if (order == 2) { // Reverse Alphabetically
+        } else if (order == 2) { // Least amount in stock
             sortedList = mergeSort.sortByStockDescending(camList);
             loadListToTable(sortedList);
         }
