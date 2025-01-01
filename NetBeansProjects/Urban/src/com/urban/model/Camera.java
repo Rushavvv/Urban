@@ -16,12 +16,13 @@ public class Camera {
     private int storage;
     private String name;
     private String date;
+    private String flash;
     
     public Camera(){
         
     }
     
-    public Camera(int id, String name, int price, int stock, int resolution, String date, int storage){
+    public Camera(int id, String name, int price, int stock, int resolution, String date, int storage, String flash){
         this.id = id;
         this.name = name;
         this.price = price;
@@ -29,7 +30,7 @@ public class Camera {
         this.resolution = resolution;
         this.date = date;
         this.storage = storage;
-             
+        this.flash = flash;
     }
 
     public int getId() {
@@ -55,9 +56,15 @@ public class Camera {
     public String getDate() {
         return date;
     }
+    
     public int getStorage() {
         return storage;
     }
+    
+    public String getFlash(){
+        return flash;
+    }
+    
     public void setId(int id) {
         this.id = id;
     }
@@ -86,6 +93,9 @@ public class Camera {
         this.storage = storage;
     }
     
+    public void setFlash(String flash){
+        this.flash = flash;
+    }
     
 }
 
