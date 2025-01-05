@@ -96,32 +96,30 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="332" max="-2" attributes="0"/>
-                                                  <Component id="idError" min="-2" pref="142" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
                                                   <EmptySpace min="-2" pref="346" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
                                                       <Component id="idField" min="-2" pref="115" max="-2" attributes="0"/>
                                                       <Component id="storageField" min="-2" pref="115" max="-2" attributes="0"/>
-                                                      <Component id="storageError" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
                                                   </Group>
+                                                  <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="resolutionField" min="-2" pref="115" max="-2" attributes="0"/>
+                                                      <Component id="nameField" min="-2" pref="115" max="-2" attributes="0"/>
+                                                      <Group type="102" attributes="0">
+                                                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                                          <Component id="nameError" min="-2" pref="101" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="-2" pref="332" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
                                                       <Group type="102" attributes="0">
-                                                          <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                                                          <Group type="103" groupAlignment="0" attributes="0">
-                                                              <Component id="resolutionField" min="-2" pref="115" max="-2" attributes="0"/>
-                                                              <Component id="nameField" min="-2" pref="115" max="-2" attributes="0"/>
-                                                              <Group type="102" attributes="0">
-                                                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                                                  <Component id="nameError" min="-2" pref="101" max="-2" attributes="0"/>
-                                                              </Group>
-                                                          </Group>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                                                          <Component id="storageError" min="-2" pref="155" max="-2" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                                                           <Component id="resolutionError" min="-2" pref="191" max="-2" attributes="0"/>
                                                       </Group>
+                                                      <Component id="idError" min="-2" pref="142" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                           </Group>
@@ -227,23 +225,14 @@
                                   <Component id="flashBox" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                          <EmptySpace min="29" pref="29" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="storageError" min="-2" pref="17" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="resolutionError" min="-2" pref="17" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="dateError" min="-2" pref="17" max="-2" attributes="0"/>
-                                      <Component id="dateError2" min="-2" pref="17" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="resolutionError" min="-2" pref="17" max="-2" attributes="0"/>
+                              <Component id="dateError" min="-2" pref="17" max="-2" attributes="0"/>
+                              <Component id="dateError2" min="-2" pref="17" max="-2" attributes="0"/>
+                              <Component id="storageError" min="-2" pref="17" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="addBtn" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                               <Component id="updateBtn" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
@@ -419,6 +408,11 @@
                 <Component class="javax.swing.JLabel" name="dateError">
                 </Component>
                 <Component class="javax.swing.JLabel" name="storageError">
+                  <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" red="ff" type="rgb"/>
+                    </Property>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="dateError2">
                 </Component>
@@ -712,7 +706,7 @@
                       <StringArray count="3">
                         <StringItem index="0" value="Sort Stock By"/>
                         <StringItem index="1" value="Least In Stock"/>
-                        <StringItem index="2" value="Most In Stoc"/>
+                        <StringItem index="2" value="Most In Stock"/>
                       </StringArray>
                     </Property>
                   </Properties>

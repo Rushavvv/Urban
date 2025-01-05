@@ -7,28 +7,47 @@ import com.urban.model.Camera;
 import java.util.List;
 
 /**
+ * Class to perform insertion sort on a list of Camera objects.
  *
- * @author rushav
+ * @author rushavSthapit
+ * LMU_ID: 23048581
  */
 public class InsertionSort {
-    public InsertionSort(){
-    
+
+    /**
+     * Default constructor for the InsertionSort class.
+     */
+    public InsertionSort() {
     }
-    // Method to sort names alphabetically using insertion sort
-   public List<Camera> sortAlphabetically(List<Camera> cameraList) {
-       System.out.println("3");
+
+    /**
+     * Sorts a list of Camera objects alphabetically by their name in ascending order.
+     *
+     * @param cameraList the list of Camera objects to be sorted
+     * @return the sorted list in ascending order
+     */
+    public List<Camera> sortAlphabetically(List<Camera> cameraList) {
         return sort(cameraList, true);
     }
 
-    // Public method to sort the list of Camera objects in reverse alphabetical order
+    /**
+     * Sorts a list of Camera objects in reverse alphabetical order by their name.
+     *
+     * @param cameraList the list of Camera objects to be sorted
+     * @return the sorted list in descending order
+     */
     public List<Camera> sortReverseAlphabetically(List<Camera> cameraList) {
-        System.out.println("4");
         return sort(cameraList, false);
     }
 
-    // Core sort method with a toggle for ascending/descending order
+    /**
+     * Core sort method to perform insertion sort on the given list.
+     *
+     * @param cameraList the list of Camera objects to be sorted
+     * @param ascending specifies whether to sort in ascending (true) or descending (false) order
+     * @return the sorted list
+     */
     private List<Camera> sort(List<Camera> cameraList, boolean ascending) {
-        System.out.println("6");
         for (int i = 1; i < cameraList.size(); i++) {
             Camera key = cameraList.get(i);
             int insertPosition = findInsertPosition(cameraList, key, i, ascending);
@@ -38,9 +57,16 @@ public class InsertionSort {
         return cameraList;
     }
 
-    // Helper method to find the correct position for the current key
+    /**
+     * Finds the correct position to insert the current Camera object in the sorted portion of the list.
+     *
+     * @param cameraList the list of Camera objects
+     * @param key the current Camera object to be inserted
+     * @param endIndex the index up to which the list is sorted
+     * @param ascending specifies whether to sort in ascending (true) or descending (false) order
+     * @return the index where the key should be inserted
+     */
     private int findInsertPosition(List<Camera> cameraList, Camera key, int endIndex, boolean ascending) {
-        System.out.println("7");
         int j = endIndex - 1;
         while (j >= 0 && shouldSwap(cameraList.get(j), key, ascending)) {
             j--;
@@ -48,16 +74,27 @@ public class InsertionSort {
         return j + 1; // Return the insert position
     }
 
-    // Helper method to determine if swapping is needed
+    /**
+     * Determines whether the current Camera object should be swapped based on the sort order.
+     *
+     * @param a the current Camera object in the sorted portion of the list
+     * @param b the Camera object to be inserted
+     * @param ascending specifies whether to sort in ascending (true) or descending (false) order
+     * @return true if the objects should be swapped, false otherwise
+     */
     private boolean shouldSwap(Camera a, Camera b, boolean ascending) {
-        System.out.println("8");
         int comparison = a.getName().compareTo(b.getName());
         return ascending ? comparison > 0 : comparison < 0;
     }
 
-    // Helper method to shift elements to the right to make space for the key
+    /**
+     * Shifts elements in the list to the right to create space for the key.
+     *
+     * @param cameraList the list of Camera objects
+     * @param start the index where the shifting starts
+     * @param end the index where the shifting ends
+     */
     private void shiftRight(List<Camera> cameraList, int start, int end) {
-        System.out.println("9");
         for (int k = end; k > start; k--) {
             cameraList.set(k, cameraList.get(k - 1));
         }

@@ -9,7 +9,8 @@ import java.util.List;
 
 /**
  *
- * @author rushav
+ * @author rushavSthapit
+ * LMU_ID: 23048581
  */
 public class SelectionSort {
     List<Camera> cameraSortList;
@@ -17,8 +18,6 @@ public class SelectionSort {
     public SelectionSort(){
         cameraSortList = new ArrayList<>();
     }
-    
-
     /**
      * Finds the index of the extremum value (minimum or maximum) in the list
      * from the start index.
