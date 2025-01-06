@@ -8,10 +8,12 @@ import com.urban.controller.ValidationUtil;
 import com.urban.controller.SelectionSort;
 import com.urban.controller.InsertionSort;
 import com.urban.controller.MergeSort;
+import com.urban.controller.BinarySearch;
 import com.urban.model.Camera;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import javax.swing.JLabel;
@@ -193,7 +195,11 @@ public class UrbanCam extends javax.swing.JFrame {
         sortComboBox = new javax.swing.JComboBox<>();
         insertionSortComboBox = new javax.swing.JComboBox<>();
         mergeSortComboBox = new javax.swing.JComboBox<>();
-        jLabel20 = new javax.swing.JLabel();
+        sortingLbl = new javax.swing.JLabel();
+        searchField = new javax.swing.JTextField();
+        searchBtn = new javax.swing.JButton();
+        searchError = new javax.swing.JLabel();
+        backBtn = new javax.swing.JButton();
         homePnl = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -476,7 +482,7 @@ public class UrbanCam extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, true, true
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -489,6 +495,10 @@ public class UrbanCam extends javax.swing.JFrame {
             camTable.getColumnModel().getColumn(1).setResizable(false);
             camTable.getColumnModel().getColumn(2).setResizable(false);
             camTable.getColumnModel().getColumn(3).setResizable(false);
+            camTable.getColumnModel().getColumn(4).setResizable(false);
+            camTable.getColumnModel().getColumn(5).setResizable(false);
+            camTable.getColumnModel().getColumn(6).setResizable(false);
+            camTable.getColumnModel().getColumn(7).setResizable(false);
         }
 
         sortComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sort ID By", "Ascending", "Descending" }));
@@ -512,9 +522,32 @@ public class UrbanCam extends javax.swing.JFrame {
             }
         });
 
-        jLabel20.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel20.setText("Sorting");
+        sortingLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        sortingLbl.setForeground(new java.awt.Color(242, 242, 242));
+        sortingLbl.setText("Sorting");
+
+        searchBtn.setBackground(new java.awt.Color(0, 0, 0));
+        searchBtn.setForeground(new java.awt.Color(242, 242, 242));
+        searchBtn.setText("Search");
+        searchBtn.setBorder(null);
+        searchBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBtnActionPerformed(evt);
+            }
+        });
+
+        searchError.setForeground(new java.awt.Color(255, 0, 0));
+        searchError.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        backBtn.setBackground(new java.awt.Color(0, 0, 0));
+        backBtn.setForeground(new java.awt.Color(242, 242, 242));
+        backBtn.setText("Back");
+        backBtn.setBorder(null);
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout tablePnlLayout = new javax.swing.GroupLayout(tablePnl);
         tablePnl.setLayout(tablePnlLayout);
@@ -523,25 +556,44 @@ public class UrbanCam extends javax.swing.JFrame {
             .addGroup(tablePnlLayout.createSequentialGroup()
                 .addGroup(tablePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(tablePnlLayout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addGroup(tablePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(insertionSortComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(sortComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(mergeSortComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(tablePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(tablePnlLayout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addGroup(tablePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(insertionSortComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(sortComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(mergeSortComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(tablePnlLayout.createSequentialGroup()
+                                .addGap(49, 49, 49)
+                                .addComponent(sortingLbl)))
+                        .addGap(45, 45, 45)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1109, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(tablePnlLayout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jLabel20)))
-                .addGap(45, 45, 45)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(344, 344, 344)
+                        .addComponent(searchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(searchField, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(tablePnlLayout.createSequentialGroup()
+                        .addGap(570, 570, 570)
+                        .addComponent(searchError, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(824, Short.MAX_VALUE))
         );
         tablePnlLayout.setVerticalGroup(
             tablePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tablePnlLayout.createSequentialGroup()
-                .addGap(109, 109, 109)
+                .addGap(29, 29, 29)
+                .addComponent(searchError, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(tablePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(searchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(tablePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(tablePnlLayout.createSequentialGroup()
-                        .addComponent(jLabel20)
+                        .addComponent(sortingLbl)
                         .addGap(49, 49, 49)
                         .addComponent(sortComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(39, 39, 39)
@@ -549,7 +601,7 @@ public class UrbanCam extends javax.swing.JFrame {
                         .addGap(40, 40, 40)
                         .addComponent(mergeSortComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(806, Short.MAX_VALUE))
+                .addContainerGap(823, Short.MAX_VALUE))
         );
 
         tabbedPane.addTab("Dashboard", tablePnl);
@@ -930,7 +982,6 @@ public class UrbanCam extends javax.swing.JFrame {
      *
      * @param textField the JTextField to be updated
      * @param fieldName the name of the field to display in the title of the
-     * border
      * @param errorLbl the JLabel to display error messages
      * @param errorMsg the error message to display
      * @param color the color of the border
@@ -1234,6 +1285,33 @@ public class UrbanCam extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_mergeSortComboBoxActionPerformed
 
+    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
+        // TODO add your handling code here:
+        if(!ValidationUtil.IsEmpty(searchField.getText())){
+            InsertionSort sort = new InsertionSort();
+            List<Camera> sortedList = sort.sortAlphabetically(camList);
+            BinarySearch search = new BinarySearch();
+            Camera searchedData = search.searchByName(searchField.getText().trim(), sortedList, 0, sortedList.size()-1);
+            if(searchedData!=null){
+                System.out.println(searchedData.getName());
+                loadListToTable(Collections.singletonList(searchedData));
+                errorOrNormalField(searchField, "", searchError, "", Color.BLACK, rootPaneCheckingEnabled);
+            }else{
+                System.out.println("Sorry");
+                errorOrNormalField(searchField, "", searchError, "Sorry item not found", Color.red, rootPaneCheckingEnabled);
+            }
+        }else{
+            errorOrNormalField(searchField, "", searchError, "Please type the name of the item you want to search", Color.red, rootPaneCheckingEnabled);
+
+        }
+    }//GEN-LAST:event_searchBtnActionPerformed
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        // TODO add your handling code here:
+        loadListToTable(camList);
+        errorOrNormalField(searchField, "", searchError, "", Color.BLACK, rootPaneCheckingEnabled);
+    }//GEN-LAST:event_backBtnActionPerformed
+
     /**
      * Main method to run the UrbanCam application.
      *
@@ -1276,6 +1354,7 @@ public class UrbanCam extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBtn;
     private javax.swing.JPanel adminPnl;
+    private javax.swing.JButton backBtn;
     private javax.swing.JTable camTable;
     private javax.swing.JLabel dateError;
     private javax.swing.JLabel dateError2;
@@ -1298,7 +1377,6 @@ public class UrbanCam extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
@@ -1330,7 +1408,11 @@ public class UrbanCam extends javax.swing.JFrame {
     private javax.swing.JLabel progLabel;
     private javax.swing.JLabel resolutionError;
     private javax.swing.JTextField resolutionField;
+    private javax.swing.JButton searchBtn;
+    private javax.swing.JLabel searchError;
+    private javax.swing.JTextField searchField;
     private javax.swing.JComboBox<String> sortComboBox;
+    private javax.swing.JLabel sortingLbl;
     private javax.swing.JLabel stockError;
     private javax.swing.JTextField stockField;
     private javax.swing.JLabel storageError;

@@ -8,11 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author rushavSthapit
- * LMU_ID: 23048581
- */
-/**
  * Class to perform merge sort on a list of Camera objects based on stock quantity.
  *
  * @author rushavSthapit
