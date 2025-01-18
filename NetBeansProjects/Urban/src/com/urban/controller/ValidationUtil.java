@@ -28,7 +28,7 @@ public class ValidationUtil extends Camera {
         try {
             int id = Integer.parseInt(camId);
 
-            if (id < 100000 || id > 999999) {
+            if (id < 1000 || id > 9999999) {
                 return false;
             }
 
@@ -92,7 +92,7 @@ public class ValidationUtil extends Camera {
         try {
             int pri = Integer.parseInt(price);
 
-            if (pri < 70000 || pri > 500000) {
+            if (pri < 50000 || pri > 5000000) {
                 return false;
             }
 
@@ -102,6 +102,29 @@ public class ValidationUtil extends Camera {
             return true;
         }
     }
+    
+    /**
+     * Validates if the stock is within the range of 1 to 10.
+     *
+     * @param stock the price to validate
+     * @return true if the stock is valid, false otherwise
+     */
+    public static boolean isStockValid(String stock) {
+        try {
+            int st = Integer.parseInt(stock);
+
+            if (st < 1 || st > 10) {
+                return false;
+            }
+
+            return true;
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Stock Invalid", "Invalid Stock", JOptionPane.ERROR_MESSAGE);
+            return true;
+        }
+    }
+    
+    
 
     /**
      * Validates if the stock is within the permissible limit (up to 20).
