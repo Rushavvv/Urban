@@ -366,20 +366,20 @@ public class UrbanCam extends javax.swing.JFrame {
                     .addGroup(adminPnlLayout.createSequentialGroup()
                         .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(adminPnlLayout.createSequentialGroup()
-                                .addGap(346, 346, 346)
-                                .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(nameError, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(adminPnlLayout.createSequentialGroup()
-                                            .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(storageField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGap(93, 93, 93)
-                                            .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(resolutionField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(322, 322, 322)
+                                .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(nameError, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(adminPnlLayout.createSequentialGroup()
-                                        .addGap(202, 202, 202)
+                                        .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(storageField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(93, 93, 93)
+                                        .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(resolutionField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(adminPnlLayout.createSequentialGroup()
+                                        .addComponent(storageError, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(43, 43, 43)
                                         .addComponent(resolutionError, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(40, 40, 40)
                                 .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -395,10 +395,8 @@ public class UrbanCam extends javax.swing.JFrame {
                                         .addComponent(priceError, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(adminPnlLayout.createSequentialGroup()
                                 .addGap(332, 332, 332)
-                                .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(idError, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(storageError, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(48, 48, 48)
+                                .addComponent(idError, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(61, 61, 61)
                                 .addComponent(jLabel21)))
                         .addGroup(adminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(adminPnlLayout.createSequentialGroup()
@@ -1041,7 +1039,7 @@ public class UrbanCam extends javax.swing.JFrame {
             if (ValidationUtil.IsEmpty(idText)) {
                 errorOrNormalField(idField, "Id", idError, "Please Enter ID", Color.red, rootPaneCheckingEnabled);
                 return;
-            } else if (!ValidationUtil.isnum(idText)) {
+            } else if (!ValidationUtil.isNum(idText)) {
                 errorOrNormalField(idField, "Id", idError, "Id Must be a number", Color.red, rootPaneCheckingEnabled);
                 return;
             } else if (!ValidationUtil.isIdStartCorrect(idText)) {
@@ -1065,7 +1063,7 @@ public class UrbanCam extends javax.swing.JFrame {
             if (ValidationUtil.IsEmpty(price)) {
                 errorOrNormalField(priceField, "Price", priceError, "Please enter a price", Color.red, rootPaneCheckingEnabled);
                 return;            
-            } else if (!ValidationUtil.isnum(price)) {
+            } else if (!ValidationUtil.isNum(price)) {
                 errorOrNormalField(priceField, "Price", priceError, "Price Must be a number", Color.red, rootPaneCheckingEnabled);
                 return;
             } else if (!ValidationUtil.isPriceValid(price)) {
@@ -1077,7 +1075,7 @@ public class UrbanCam extends javax.swing.JFrame {
             if (ValidationUtil.IsEmpty(stock)) {
                 errorOrNormalField(stockField, "Stock", stockError, "Please enter stock", Color.red, rootPaneCheckingEnabled);
                 return; 
-            }else if (!ValidationUtil.isnum(stock)) {
+            }else if (!ValidationUtil.isNum(stock)) {
                 errorOrNormalField(stockField, "Stock", stockError, "Stock Must be a number", Color.red, rootPaneCheckingEnabled);
                 return;
             }else if (!ValidationUtil.isStockValid(stock)) {
@@ -1089,7 +1087,7 @@ public class UrbanCam extends javax.swing.JFrame {
             if (ValidationUtil.IsEmpty(resolution)) {
                 errorOrNormalField(resolutionField, "Resolution", resolutionError, "Please enter resolution", Color.red, rootPaneCheckingEnabled);
                 return; 
-            }else if (!ValidationUtil.isnum(resolution)) {
+            }else if (!ValidationUtil.isNum(resolution)) {
                 errorOrNormalField(resolutionField, "Resolution", resolutionError, "Must be a number", Color.red, rootPaneCheckingEnabled);
                 return;
             } else if (!ValidationUtil.isResolutionInRange(resolution)) {
@@ -1101,8 +1099,11 @@ public class UrbanCam extends javax.swing.JFrame {
             if (ValidationUtil.IsEmpty(storage)) {
                 errorOrNormalField(storageField, "Storage", storageError, "Please enter storage", Color.red, rootPaneCheckingEnabled);
                 return; 
-            } else if (!ValidationUtil.isnum(storage)) {
+            } else if (!ValidationUtil.isNum(storage)) {
                 errorOrNormalField(storageField, "Storage", storageError, "Storage Must be a number", Color.red, rootPaneCheckingEnabled);
+                return;
+            } else if (!ValidationUtil.isStorageValid(storage)) {
+                errorOrNormalField(storageField, "Storage", storageError, "Enter valid storage number", Color.red, rootPaneCheckingEnabled);
                 return;
             }
 
@@ -1151,7 +1152,7 @@ public class UrbanCam extends javax.swing.JFrame {
             if (ValidationUtil.IsEmpty(idText)) {
                 errorOrNormalField(idField, "Id", idError, "Please Enter ID", Color.red, rootPaneCheckingEnabled);
                 return;
-            } else if (!ValidationUtil.isnum(idText)) {
+            } else if (!ValidationUtil.isNum(idText)) {
                 errorOrNormalField(idField, "Id", idError, "Id Must be a number", Color.red, rootPaneCheckingEnabled);
                 return;
             } else if (!ValidationUtil.isIdStartCorrect(idText)) {
@@ -1175,7 +1176,7 @@ public class UrbanCam extends javax.swing.JFrame {
             if (ValidationUtil.IsEmpty(price)) {
                 errorOrNormalField(priceField, "Price", priceError, "Please enter a price", Color.red, rootPaneCheckingEnabled);
                 return;            
-            } else if (!ValidationUtil.isnum(price)) {
+            } else if (!ValidationUtil.isNum(price)) {
                 errorOrNormalField(priceField, "Price", priceError, "Price Must be a number", Color.red, rootPaneCheckingEnabled);
                 return;
             } else if (!ValidationUtil.isPriceValid(price)) {
@@ -1187,7 +1188,7 @@ public class UrbanCam extends javax.swing.JFrame {
             if (ValidationUtil.IsEmpty(stock)) {
                 errorOrNormalField(stockField, "Stock", stockError, "Please enter stock", Color.red, rootPaneCheckingEnabled);
                 return; 
-            }else if (!ValidationUtil.isnum(stock)) {
+            }else if (!ValidationUtil.isNum(stock)) {
                 errorOrNormalField(stockField, "Stock", stockError, "Stock Must be a number", Color.red, rootPaneCheckingEnabled);
                 return;
             }else if (!ValidationUtil.isStockValid(stock)) {
@@ -1199,7 +1200,7 @@ public class UrbanCam extends javax.swing.JFrame {
             if (ValidationUtil.IsEmpty(resolution)) {
                 errorOrNormalField(resolutionField, "Resolution", resolutionError, "Please enter resolution", Color.red, rootPaneCheckingEnabled);
                 return; 
-            }else if (!ValidationUtil.isnum(resolution)) {
+            }else if (!ValidationUtil.isNum(resolution)) {
                 errorOrNormalField(resolutionField, "Resolution", resolutionError, "Must be a number", Color.red, rootPaneCheckingEnabled);
                 return;
             } else if (!ValidationUtil.isResolutionInRange(resolution)) {
@@ -1211,7 +1212,7 @@ public class UrbanCam extends javax.swing.JFrame {
             if (ValidationUtil.IsEmpty(storage)) {
                 errorOrNormalField(storageField, "Storage", storageError, "Please enter storage", Color.red, rootPaneCheckingEnabled);
                 return; 
-            } else if (!ValidationUtil.isnum(storage)) {
+            } else if (!ValidationUtil.isNum(storage)) {
                 errorOrNormalField(storageField, "Storage", storageError, "Storage Must be a number", Color.red, rootPaneCheckingEnabled);
                 return;
             }
@@ -1267,7 +1268,7 @@ public class UrbanCam extends javax.swing.JFrame {
             if (ValidationUtil.IsEmpty(idText)) {
                 errorOrNormalField(idField, "Id", idError, "Please Enter ID", Color.red, rootPaneCheckingEnabled);
                 return;
-            } else if (!ValidationUtil.isnum(idText)) {
+            } else if (!ValidationUtil.isNum(idText)) {
                 errorOrNormalField(idField, "Id", idError, "Id Must be a number", Color.red, rootPaneCheckingEnabled);
                 return;
             } else if (!ValidationUtil.isIdStartCorrect(idText)) {

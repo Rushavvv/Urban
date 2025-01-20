@@ -73,7 +73,7 @@ public class ValidationUtil extends Camera {
      * @param num the string to check
      * @return true if the string is numeric, false otherwise
      */
-    public static boolean isnum(String num) {
+    public static boolean isNum(String num) {
         try {
             Integer.parseInt(num);
             return true;
@@ -124,8 +124,6 @@ public class ValidationUtil extends Camera {
         }
     }
     
-    
-
     /**
      * Validates if the stock is within the permissible limit (up to 20).
      *
@@ -171,12 +169,16 @@ public class ValidationUtil extends Camera {
     /**
      * Placeholder for validating storage (currently always returns true).
      *
-     * @param Storage the storage to validate
+     * @param storage the storage to validate
      * @return true if the storage is valid, false otherwise
      */
-    public static boolean isStorageValid(String Storage) {
+    public static boolean isStorageValid(String storage) {
         try {
-            return true;
+            int storageValue = Integer.parseInt(storage);
+
+            // Check if the value matches one of the predefined valid storage options
+            return storageValue == 28 || storageValue == 32 || storageValue == 64 || 
+            storageValue == 128 || storageValue == 256;
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Storage Invalid", "Invalid Storage", JOptionPane.ERROR_MESSAGE);
             return true;

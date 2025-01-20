@@ -94,24 +94,23 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="346" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                                  <Component id="nameError" min="-2" pref="121" max="-2" attributes="0"/>
-                                                  <Group type="102" attributes="0">
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="idField" min="-2" pref="115" max="-2" attributes="0"/>
-                                                          <Component id="storageField" min="-2" pref="115" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="resolutionField" min="-2" pref="115" max="-2" attributes="0"/>
-                                                          <Component id="nameField" min="-2" pref="115" max="-2" attributes="0"/>
-                                                      </Group>
+                                          <EmptySpace min="-2" pref="322" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="nameError" min="-2" pref="121" max="-2" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="idField" min="-2" pref="115" max="-2" attributes="0"/>
+                                                      <Component id="storageField" min="-2" pref="115" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="resolutionField" min="-2" pref="115" max="-2" attributes="0"/>
+                                                      <Component id="nameField" min="-2" pref="115" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="202" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Component id="storageError" min="-2" pref="183" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                                                   <Component id="resolutionError" min="-2" pref="138" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
@@ -135,11 +134,8 @@
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="332" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="idError" min="-2" pref="142" max="-2" attributes="0"/>
-                                              <Component id="storageError" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                                          <Component id="idError" min="-2" pref="142" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                                           <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
